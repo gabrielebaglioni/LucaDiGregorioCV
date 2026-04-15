@@ -1,8 +1,9 @@
 .article-detail-page {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100svh;
   min-height: 100svh;
+  overflow: hidden;
   background-color: #000;
   padding: 1em;
 }
@@ -11,7 +12,7 @@
   width: 100%;
   display: flex;
   gap: 1em;
-  margin: 25vh 0;
+  margin: 15vh 0;
 }
 
 .article-detail-col:nth-child(1) {
@@ -38,6 +39,7 @@
 .tags {
   display: flex;
   gap: 1em;
+  margin-bottom: 2em;
 }
 
 .article-copy p .line {
