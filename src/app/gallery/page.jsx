@@ -1,7 +1,6 @@
 "use client";
 import "./gallery.css";
 
-import { generateSlug } from "@/utils";
 import articles from "@/articles";
 import Footer from "@/components/Footer/Footer";
 
@@ -93,7 +92,7 @@ const Page = () => {
     { scope: containerRef }
   );
 
-  const articleDistribution = [
+  const rowPattern = [
     [0, 1, 0],
     [1, 0, 0],
     [0, 0, 1],
@@ -101,22 +100,16 @@ const Page = () => {
     [1, 0, 0],
   ];
 
-  const maxRows = Math.min(articleDistribution.length, articles.length);
-
   const getArticleLayout = () => {
-    let articleIndex = 0;
     const layout = [];
 
-    for (let rowIndex = 0; rowIndex < maxRows; rowIndex++) {
+    for (let rowIndex = 0; rowIndex < articles.length; rowIndex++) {
+      const pattern = rowPattern[rowIndex % rowPattern.length];
       const rowLayout = [null, null, null];
 
       for (let colIndex = 0; colIndex < 3; colIndex++) {
-        if (
-          articleDistribution[rowIndex][colIndex] === 1 &&
-          articleIndex < articles.length
-        ) {
-          rowLayout[colIndex] = articles[articleIndex];
-          articleIndex++;
+        if (pattern[colIndex] === 1) {
+          rowLayout[colIndex] = articles[rowIndex];
           break;
         }
       }
@@ -146,7 +139,7 @@ const Page = () => {
                   <div
                     className="article-card"
                     onClick={() =>
-                      navigateTo(`/gallery/${generateSlug(article.title)}`)
+                      navigateTo(`/gallery/${article.slug}`)
                     }
                   >
                     <div className="article-image">

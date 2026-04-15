@@ -162,30 +162,6 @@ const ArticleDetail = () => {
               alt={article.title}
             />
           </div>
-          <div className="article-copy">
-            <p
-              id="article-paragraph-0"
-              ref={(el) => (descriptionRefs.current[0] = el)}
-            >
-              {article.bodyCopy[0]}
-            </p>
-          </div>
-          <div className="article-copy">
-            <p
-              id="article-paragraph-1"
-              ref={(el) => (descriptionRefs.current[1] = el)}
-            >
-              {article.bodyCopy[1]}
-            </p>
-          </div>
-          <div className="article-copy">
-            <p
-              id="article-paragraph-2"
-              ref={(el) => (descriptionRefs.current[2] = el)}
-            >
-              {article.bodyCopy[2]}
-            </p>
-          </div>
         </div>
         <div className="article-detail-col article-meta">
           <div className="article-date">
@@ -222,6 +198,17 @@ const ArticleDetail = () => {
                   <p>{tag}</p>
                 </div>
               ))}
+            </div>
+            <div className="article-copy">
+            <div className="revealer">
+              <p>Description</p>
+            </div>
+              <p
+                id="article-paragraph-0"
+                ref={(el) => (descriptionRefs.current[0] = el)}
+              >
+                {article.bodyCopy[0]}
+              </p>
             </div>
           </div>
         </div>

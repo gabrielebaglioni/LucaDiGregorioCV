@@ -30,47 +30,22 @@ function seededShuffle(arr, rand) {
   return a;
 }
 
-const items = (assets?.items ?? [])
-  .filter((i) => i?.image)
-  .slice()
-  .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
-
-const paintings = items.filter((i) => i.kind === "painting").slice(0, 10);
-const papers = items.filter((i) => i.kind === "paper").slice(0, 10);
-const sculptures = items.filter((i) => i.kind === "sculpture").slice(0, 10);
-
-// "random che non stanno nelle sotto cartelle" = file direttamente sotto /asset/
-const rootAssets = items.filter((i) => /^\/asset\/[^/]+\.(jpe?g|png|gif|webp)$/i.test(i.image));
-const usedIds = new Set([...paintings, ...papers, ...sculptures].map((i) => i.id));
-const rootPool = rootAssets.filter((i) => !usedIds.has(i.id));
+const pool = (assets?.items ?? []).filter((i) => i?.image);
 
 const seed = hashString(String(assets?.generatedAt ?? "assets"));
 const rand = mulberry32(seed);
-const randomRoot = seededShuffle(rootPool, rand).slice(0, 10);
 
-// pattern: paper, painting, painting, sculpture, random, repeat
-const buckets = {
-  paper: papers.slice(),
-  painting: paintings.slice(),
-  sculpture: sculptures.slice(),
-  random: randomRoot.slice(),
-};
-const cycle = ["paper", "painting", "painting", "sculpture", "random"];
+/** Gallery size 25–30, deterministic for a given assets.json */
+const galleryCount = 25 + (seed % 6);
 
-const selected = [];
-let safety = 0;
-while (safety++ < 1000) {
-  const hasAny = Object.values(buckets).some((b) => b.length > 0);
-  if (!hasAny) break;
-  for (const key of cycle) {
-    if (buckets[key].length > 0) selected.push(buckets[key].shift());
-  }
-}
+const shuffled = seededShuffle(pool, rand);
+const selected = shuffled.slice(0, Math.min(galleryCount, shuffled.length));
 
 const articles = selected.map((item, idx) => ({
   id: `A${String(idx + 1).padStart(3, "0")}`,
+  slug: item.slug || item.id,
   title: item.title,
-  bannerImg: item.image, // absolute public path: /asset/...
+  bannerImg: item.image,
   bodyCopy: [item.description ?? LOREM_PARA, LOREM_PARA, LOREM_PARA],
   author: item.kind,
   date: item.date,

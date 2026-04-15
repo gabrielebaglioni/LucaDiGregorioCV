@@ -13,9 +13,38 @@ CustomEase.create("hop", "0.33, 1, 0.68, 1");
 CustomEase.create("hop2", ".9, 0, .1, 1");
 
 let isInitialLoad = true;
-const productHeroImages = assets?.featured?.homeCarousel?.length
+
+const rawCarousel = assets?.featured?.homeCarousel?.length
   ? assets.featured.homeCarousel
   : [];
+/** Fallback so the hero is never empty (black screen). */
+const productHeroImages =
+  rawCarousel.length > 0 ? rawCarousel : ["/hero.gif"];
+
+/** Regola qui la “lentezza” delle transizioni sulla home (valori più alti = più lenti). */
+const HOME = {
+  /** Preloader GSAP */
+  preloaderGifFadeDelay: 3,
+  preloaderGifFadeDuration: 0.55,
+  preLoaderScaleDuration: 2,
+  contentRevealDuration: 3,
+  loaderCollapseDuration: 2,
+  loaderBgOverlap: -1.2,
+  loader2Duration: 2,
+  /** Hero: ingresso dopo il preloader (allineato al reveal del contenuto) */
+  heroDelayWithPreloader: 5.5,
+  heroDelayNoPreloader: 2.2,
+  heroDurationWithPreloader: 3.2,
+  heroDurationNoPreloader: 4.5,
+  /** View transition quando navighi via dalla home (ms) */
+  viewTransitionMs: 2800,
+  /** Blocco click durante la navigazione (ms) */
+  navAnimLockMs: 3200,
+  /** Se la timeline GSAP si blocca, forza fine preloader (ms) */
+  preloaderSafetyMs: 35000,
+  /** Slideshow immagini hero (ms) */
+  heroCarouselIntervalMs: 8000,
+};
 
 export default function Home() {
   const router = useTransitionRouter();
@@ -23,8 +52,9 @@ export default function Home() {
   const [activeProductImage, setActiveProductImage] = useState(0);
   const [isHeroVisible, setIsHeroVisible] = useState(false);
   const container = useRef(null);
-  const counterRef = useRef(null);
   const [showPreloader, setShowPreloader] = useState(isInitialLoad);
+  /** Snapshot al primo render: decide delay hero senza re-run useGSAP quando il preloader finisce. */
+  const hadPreloaderAtMount = useRef(showPreloader);
 
   useEffect(() => {
     return () => {
@@ -33,12 +63,19 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    productHeroImages.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
+  useEffect(() => {
     if (!isHeroVisible) return;
     if (productHeroImages.length === 0) return;
 
     const interval = setInterval(() => {
       setActiveProductImage((current) => (current + 1) % productHeroImages.length);
-    }, 5000);
+    }, HOME.heroCarouselIntervalMs);
 
     return () => clearInterval(interval);
   }, [isHeroVisible]);
@@ -56,7 +93,7 @@ export default function Home() {
         },
       ],
       {
-        duration: 1200,
+        duration: HOME.viewTransitionMs,
         easing: "cubic-bezier(0.87, 0, 0.13, 1)",
         fill: "forwards",
         pseudoElement: "::view-transition-old(root)",
@@ -73,7 +110,7 @@ export default function Home() {
         },
       ],
       {
-        duration: 1200,
+        duration: HOME.viewTransitionMs,
         easing: "cubic-bezier(0.87, 0, 0.13, 1)",
         fill: "forwards",
         pseudoElement: "::view-transition-new(root)",
@@ -92,105 +129,87 @@ export default function Home() {
 
     setTimeout(() => {
       setIsAnimating(false);
-    }, 1500);
-  };
-
-  const startLoader = () => {
-    const counterElement =
-      document.querySelector(".count p") || counterRef.current;
-    const totalDuration = 2000;
-    const totalSteps = 11;
-    const timePerStep = totalDuration / totalSteps;
-
-    if (counterElement) {
-      counterElement.textContent = "0";
-    }
-
-    let currentStep = 0;
-    function updateCounter() {
-      currentStep++;
-      if (currentStep <= totalSteps) {
-        const progress = currentStep / totalSteps;
-        let value;
-
-        if (currentStep === totalSteps) {
-          value = 100;
-        } else {
-          const exactValue = progress * 100;
-          const minValue = Math.max(Math.floor(exactValue - 5), 1);
-          const maxValue = Math.min(Math.floor(exactValue + 5), 99);
-          value =
-            Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
-        }
-        if (counterElement) {
-          counterElement.textContent = value;
-        }
-        if (currentStep < totalSteps) {
-          setTimeout(updateCounter, timePerStep);
-        }
-      }
-    }
-
-    setTimeout(updateCounter, timePerStep);
+    }, HOME.navAnimLockMs);
   };
 
   useEffect(() => {
-    if (showPreloader) {
-      startLoader();
+    if (!showPreloader) {
+      const el = container.current?.querySelector(".home-page-content");
+      if (el) {
+        gsap.set(el, {
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        });
+      }
+      return;
+    }
 
-      gsap.set(".home-page-content", {
-        clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+    const root = container.current;
+    if (!root) return;
+
+    gsap.set(root.querySelector(".home-page-content"), {
+      clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+    });
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        onComplete: () => {
+          setShowPreloader(false);
+        },
       });
 
-      const tl = gsap.timeline();
-
-      tl.to(".count", {
+      tl.to(".loader-gif", {
         opacity: 0,
-        delay: 2.5,
-        duration: 0.25,
+        delay: HOME.preloaderGifFadeDelay,
+        duration: HOME.preloaderGifFadeDuration,
       });
 
       tl.to(".pre-loader", {
         scale: 0.5,
         ease: "hop2",
-        duration: 1,
+        duration: HOME.preLoaderScaleDuration,
       });
 
       tl.to(".home-page-content", {
         clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-        duration: 1.5,
+        duration: HOME.contentRevealDuration,
         ease: "hop2",
-        delay: -1,
+        delay: -1.2,
       });
 
       tl.to(".loader", {
         height: "0",
         ease: "hop2",
-        duration: 1,
-        delay: -1,
+        duration: HOME.loaderCollapseDuration,
+        delay: -1.2,
       });
 
       tl.to(".loader-bg", {
         height: "0",
         ease: "hop2",
-        duration: 1,
-        delay: -0.5,
+        duration: HOME.loaderCollapseDuration,
+        delay: HOME.loaderBgOverlap,
       });
 
       tl.to(".loader-2", {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
         ease: "hop2",
-        duration: 1,
+        duration: HOME.loader2Duration,
       });
-    } else {
-      gsap.set(".home-page-content", {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      });
-    }
+    }, root);
+
+    const safety = window.setTimeout(() => {
+      setShowPreloader(false);
+    }, HOME.preloaderSafetyMs);
+
+    return () => {
+      window.clearTimeout(safety);
+      ctx.revert();
+    };
   }, [showPreloader]);
 
   useGSAP(
     () => {
+      const withPreloader = hadPreloaderAtMount.current;
       const tl = gsap.timeline();
 
       tl.fromTo(
@@ -207,13 +226,17 @@ export default function Home() {
           y: 0,
           scale: 1,
           ease: "hop",
-          duration: 2.4,
-          delay: showPreloader ? 4.9 : 1.10,
+          duration: withPreloader
+            ? HOME.heroDurationWithPreloader
+            : HOME.heroDurationNoPreloader,
+          delay: withPreloader
+            ? HOME.heroDelayWithPreloader
+            : HOME.heroDelayNoPreloader,
           onStart: () => setIsHeroVisible(true),
         }
       );
     },
-    { scope: container, dependencies: [showPreloader] }
+    { scope: container, dependencies: [] }
   );
 
   return (
@@ -225,8 +248,13 @@ export default function Home() {
               <div className="loader"></div>
               <div className="loader-bg"></div>
             </div>
-            <div className="count">
-              <p ref={counterRef}>0</p>
+            <div className="loader-gif">
+              <img
+                src="/loader.gif"
+                alt=""
+                decoding="async"
+                fetchPriority="high"
+              />
             </div>
             <div className="loader-2"></div>
           </div>

@@ -7,5 +7,8 @@ export const findProductBySlug = (products, slug) => {
 };
 
 export const findArticleBySlug = (articles, slug) => {
-  return articles.find((article) => generateSlug(article.title) === slug);
+  return articles.find((article) => {
+    if (article.slug) return article.slug === slug;
+    return generateSlug(article.title) === slug;
+  });
 };
