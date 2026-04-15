@@ -5,7 +5,7 @@ import ClientLayout from "@/client-layout";
 import { ViewTransitions } from "next-view-transitions";
 
 export const metadata = {
-  title: "Format Archive | Codegrid MWT April 2025",
+  title: "Luca Di Gregorio",
   description: "A curated marketplace for digital design assets.",
 };
 

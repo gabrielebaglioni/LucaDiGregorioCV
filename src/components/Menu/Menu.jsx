@@ -1,77 +1,43 @@
 "use client";
-import "./Menu.css";
-import { useRef, useState, useEffect } from "react";
 
-import gsap from "gsap";
-import CustomEase from "gsap/CustomEase";
-import { useGSAP } from "@gsap/react";
+import "./Menu.css";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useTransitionRouter } from "next-view-transitions";
 
-gsap.registerPlugin(CustomEase);
-CustomEase.create("hop", ".15, 1, .25, 1");
+import {
+  formatCityLabelFromTimeZone,
+  formatLocalClockTime,
+  getBrowserTimeZone,
+} from "@/utils/localTime";
+
+const BRAND_NAME = "Luca Di Gregorio";
 
 const Menu = () => {
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [currentPath, setCurrentPath] = useState("/");
+  const pathname = usePathname();
   const router = useTransitionRouter();
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [localClock, setLocalClock] = useState("");
+  const [localPlaceLabel, setLocalPlaceLabel] = useState("");
 
-  const menuRef = useRef(null);
-  const navRef = useRef(null);
-  const menuOverlayRef = useRef(null);
-
-  const navLogoRef = useRef(null);
-  const menuBtnRef = useRef(null);
-
-  const overlayLogoRef = useRef(null);
-  const closeBtnRef = useRef(null);
-
-  const menuItemsRef = useRef(null);
-  const menuFooterColsRef = useRef(null);
+  const isHome = pathname === "/";
+  const isGallery = pathname === "/gallery" || pathname?.startsWith("/gallery/");
+  const primaryHref = isGallery ? "/index" : "/gallery";
+  const primaryLabel = isGallery ? "Index" : "Gallery";
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      setCurrentPath(window.location.pathname);
-    }
+    const tz = getBrowserTimeZone();
+    setLocalPlaceLabel(formatCityLabelFromTimeZone(tz));
+
+    const updateTime = () => {
+      setLocalClock(formatLocalClockTime(new Date()));
+    };
+
+    updateTime();
+    const intervalId = setInterval(updateTime, 1000);
+
+    return () => clearInterval(intervalId);
   }, []);
-
-  useEffect(() => {
-    const handleRouteChange = () => {
-      if (typeof window !== "undefined") {
-        setCurrentPath(window.location.pathname);
-      }
-    };
-
-    window.addEventListener("popstate", handleRouteChange);
-
-    router.events?.on?.("routeChangeComplete", handleRouteChange);
-
-    return () => {
-      window.removeEventListener("popstate", handleRouteChange);
-      router.events?.off?.("routeChangeComplete", handleRouteChange);
-    };
-  }, [router]);
-
-  useGSAP(
-    () => {
-      gsap.set(menuOverlayRef.current, {
-        clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-        pointerEvents: "none",
-      });
-
-      gsap.set([overlayLogoRef.current, closeBtnRef.current], {
-        y: "100%",
-      });
-
-      gsap.set(".menu-overlay-items .revealer a", {
-        y: "100%",
-      });
-
-      gsap.set(".menu-footer .revealer p, .menu-footer .revealer a", {
-        y: "100%",
-      });
-    },
-    { scope: menuRef }
-  );
 
   function slideInOut() {
     document.documentElement.animate(
@@ -111,293 +77,65 @@ const Menu = () => {
     );
   }
 
-  const getExactPath = () => {
-    if (typeof window !== "undefined") {
-      return window.location.pathname;
-    }
-    return currentPath;
-  };
-
-  const isExactPath = (path) => {
-    const exactCurrentPath = getExactPath();
-    return exactCurrentPath === path;
-  };
-
   const navigateTo = (path) => {
-    if (isAnimating) return;
+    if (isAnimating || pathname === path) return;
 
-    if (isExactPath(path)) {
-      closeMenu();
-      return;
-    }
+    setIsAnimating(true);
 
-    closeMenu();
+    router.push(path, {
+      onTransitionReady: slideInOut,
+    });
 
     setTimeout(() => {
-      router.push(path, {
-        onTransitionReady: slideInOut,
-      });
-    }, 750);
+      setIsAnimating(false);
+    }, 1500);
   };
 
-  const openMenu = () => {
-    if (isAnimating) return;
-
-    setIsAnimating(true);
-    const tl = gsap.timeline({
-      onComplete: () => setIsAnimating(false),
-    });
-
-    tl.to([navLogoRef.current, menuBtnRef.current], {
-      y: "-100%",
-      duration: 0.5,
-      stagger: 0.1,
-      ease: "power3.out",
-      onComplete: () => {
-        navRef.current.style.pointerEvents = "none";
-
-        gsap.set([navLogoRef.current, menuBtnRef.current], {
-          y: "100%",
-        });
-      },
-    });
-
-    tl.to(
-      menuOverlayRef.current,
-      {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        duration: 1,
-        ease: "hop",
-        onStart: () => {
-          menuOverlayRef.current.style.pointerEvents = "all";
-        },
-      },
-      "-=0.55"
-    );
-
-    tl.to(
-      [overlayLogoRef.current, closeBtnRef.current],
-      {
-        y: "0%",
-        duration: 1,
-        stagger: 0.1,
-        ease: "power3.out",
-      },
-      "-=0.5"
-    );
-
-    tl.to(
-      ".menu-overlay-items .revealer a",
-      {
-        y: "0%",
-        duration: 1,
-        stagger: 0.075,
-        ease: "power3.out",
-      },
-      "<"
-    );
-
-    tl.to(
-      ".menu-footer .revealer p, .menu-footer .revealer a",
-      {
-        y: "0%",
-        duration: 1,
-        stagger: 0.1,
-        ease: "power3.out",
-      },
-      "<"
-    );
-  };
-
-  const closeMenu = () => {
-    if (isAnimating) return;
-
-    setIsAnimating(true);
-    const tl = gsap.timeline({
-      onComplete: () => setIsAnimating(false),
-    });
-
-    tl.to([overlayLogoRef.current, closeBtnRef.current], {
-      y: "-100%",
-      duration: 0.5,
-      stagger: 0.1,
-      ease: "power3.out",
-    });
-
-    tl.to(
-      ".menu-overlay-items .revealer a",
-      {
-        y: "-100%",
-        duration: 0.5,
-        stagger: 0.05,
-        ease: "power3.in",
-      },
-      "<"
-    );
-
-    tl.to(
-      ".menu-footer .revealer p, .menu-footer .revealer a",
-      {
-        y: "-100%",
-        duration: 0.5,
-        stagger: 0.05,
-        ease: "power3.in",
-      },
-      "<"
-    );
-
-    tl.to(
-      menuOverlayRef.current,
-      {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-        duration: 1,
-        ease: "hop",
-        onComplete: () => {
-          menuOverlayRef.current.style.pointerEvents = "none";
-
-          gsap.set(menuOverlayRef.current, {
-            clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-          });
-
-          gsap.set([overlayLogoRef.current, closeBtnRef.current], {
-            y: "100%",
-          });
-
-          gsap.set(".menu-overlay-items .revealer a", {
-            y: "100%",
-          });
-
-          gsap.set(".menu-footer .revealer p, .menu-footer .revealer a", {
-            y: "100%",
-          });
-        },
-      },
-      "+=0.25"
-    );
-
-    tl.to(
-      [navLogoRef.current, menuBtnRef.current],
-      {
-        y: "0%",
-        duration: 0.5,
-        stagger: 0.1,
-        ease: "power3.out",
-        onStart: () => {
-          navRef.current.style.pointerEvents = "all";
-        },
-      },
-      "-=0.35"
-    );
+  const handleNavigate = (event, path) => {
+    event.preventDefault();
+    navigateTo(path);
   };
 
   return (
-    <div className="menu" ref={menuRef}>
-      <div className="nav" ref={navRef}>
-        <div className="nav-logo">
-          <div className="revealer">
-            <a
-              href="/"
-              ref={navLogoRef}
-              onClick={(e) => {
-                e.preventDefault();
-                if (isExactPath("/")) return;
+    <nav className="menu" aria-label="Primary navigation">
+      <div className="nav-corner nav-corner-top-left">
+        <div className="revealer">
+          <a href="/" onClick={(event) => handleNavigate(event, "/")}>
+            {BRAND_NAME}
+          </a>
+        </div>
+      </div>
 
-                router.push("/", {
-                  onTransitionReady: slideInOut,
-                });
-              }}
-            >
-              Format Archive
-            </a>
-          </div>
-        </div>
-        <div className="nav-items">
-          <div className="nav-menu-toggle-open">
-            <div className="revealer" onClick={openMenu}>
-              <p ref={menuBtnRef}>Menu</p>
-            </div>
-          </div>
+      <div className="nav-corner nav-corner-top-right">
+        <div className="revealer">
+          <a
+            href={primaryHref}
+            onClick={(event) => handleNavigate(event, primaryHref)}
+          >
+            {primaryLabel}
+          </a>
         </div>
       </div>
-      <div className="menu-overlay" ref={menuOverlayRef}>
-        <div className="menu-overlay-nav">
-          <div className="menu-overlay-nav-logo">
-            <div className="revealer">
-              <a
-                href="/"
-                ref={overlayLogoRef}
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigateTo("/");
-                }}
-              >
-                Format Archive
-              </a>
-            </div>
-          </div>
-          <div className="menu-overlay-nav-toggle-close">
-            <div className="revealer" onClick={closeMenu}>
-              <p ref={closeBtnRef}>Close</p>
-            </div>
+
+      {isHome && (
+        <div className="nav-corner nav-corner-bottom-left">
+          <div className="revealer">
+            <p>
+              {localPlaceLabel ? `${localPlaceLabel} ` : ""}
+              {localClock}
+            </p>
           </div>
         </div>
-        <div className="menu-overlay-items" ref={menuItemsRef}>
-          <div className="revealer">
-            <a
-              href="/index"
-              onClick={(e) => {
-                e.preventDefault();
-                navigateTo("/index");
-              }}
-            >
-              Index
-            </a>
-          </div>
-          <div className="revealer">
-            <a
-              href="/info"
-              onClick={(e) => {
-                e.preventDefault();
-                navigateTo("/info");
-              }}
-            >
-              Info
-            </a>
-          </div>
-          <div className="revealer">
-            <a
-              href="/gallery"
-              onClick={(e) => {
-                e.preventDefault();
-                navigateTo("/gallery");
-              }}
-            >
-              Gallery
-            </a>
-          </div>
-        </div>
-        <div className="menu-footer" ref={menuFooterColsRef}>
-          <div className="menu-footer-col">
-            <div className="revealer">
-              <p>&copy;2025 All rights reserved</p>
-            </div>
-          </div>
-          <div className="menu-footer-col">
-            <div className="socials">
-              <div className="revealer">
-                <a href="https://www.youtube.com/@codegrid">YouTube</a>
-              </div>
-              <div className="revealer">
-                <a href="https://www.instagram.com/codegridweb/">Instagram</a>
-              </div>
-              <div className="revealer">
-                <a href="https://x.com/codegridweb">X</a>
-              </div>
-            </div>
-          </div>
+      )}
+
+      <div className="nav-corner nav-corner-bottom-right">
+        <div className="revealer">
+          <a href="/info" onClick={(event) => handleNavigate(event, "/info")}>
+            Info
+          </a>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
