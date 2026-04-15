@@ -21,12 +21,26 @@ const rawCarousel = assets?.featured?.homeCarousel?.length
 const productHeroImages =
   rawCarousel.length > 0 ? rawCarousel : ["/hero.gif"];
 
-/** Regola qui la “lentezza” delle transizioni sulla home (valori più alti = più lenti). */
+/**
+ * Regola qui tempi e “dimensione” delle transizioni sulla home.
+ *
+ * ── SCHERMO BIANCO CHE SI RIMPICCIOLISCE ─────────────────────────────────────
+ * 1) Scala fino a preLoaderScaleEnd (opacità resta 1).
+ * 2) Poi opacità → 0 (forma già al minimo).
+ * Timeline: [PRELOADER: schermo bianco → forma minima → fade]
+ *   • preLoaderScaleEnd / preLoaderShrinkDuration
+ *   • preLoaderFadeDuration (fade dopo aver raggiunto la scala minima)
+ * ────────────────────────────────────────────────────────────────────────────
+ */
 const HOME = {
   /** Preloader GSAP */
   preloaderGifFadeDelay: 3,
   preloaderGifFadeDuration: 0.55,
-  preLoaderScaleDuration: 2,
+  /** Restringimento fino alla forma minima (opacità ancora 1). */
+  preLoaderScaleEnd: 0.02,
+  preLoaderShrinkDuration: 2.2,
+  /** Fade a opacità 0 solo dopo che la scala è al minimo. */
+  preLoaderFadeDuration: 0.45,
   contentRevealDuration: 3,
   loaderCollapseDuration: 2,
   loaderBgOverlap: -1.2,
@@ -163,10 +177,21 @@ export default function Home() {
         duration: HOME.preloaderGifFadeDuration,
       });
 
+      /* [PRELOADER: schermo bianco → forma minima → fade] */
+      gsap.set(".pre-loader", { opacity: 1, transformOrigin: "50% 50%" });
+
       tl.to(".pre-loader", {
-        scale: 0.5,
+        scale: HOME.preLoaderScaleEnd,
         ease: "hop2",
-        duration: HOME.preLoaderScaleDuration,
+        duration: HOME.preLoaderShrinkDuration,
+        transformOrigin: "50% 50%",
+      });
+
+      tl.to(".pre-loader", {
+        opacity: 0,
+        ease: "hop2",
+        duration: HOME.preLoaderFadeDuration,
+        transformOrigin: "50% 50%",
       });
 
       tl.to(".home-page-content", {
