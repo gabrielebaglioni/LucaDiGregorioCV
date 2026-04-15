@@ -167,16 +167,6 @@ const ProductDetail = () => {
               alt={product.name}
             />
           </div>
-          {productCopy.map((copy, index) => (
-            <div className="article-copy" key={index}>
-              <p
-                id={`product-paragraph-${index}`}
-                ref={(el) => (descriptionRefs.current[index] = el)}
-              >
-                {copy}
-              </p>
-            </div>
-          ))}
         </div>
         <div className="article-detail-col article-meta">
           <div className="article-date">
@@ -216,6 +206,22 @@ const ProductDetail = () => {
                 )
               )}
             </div>
+          </div>
+
+          <div className="article-copy">
+            <div className="revealer">
+              <p>Description</p>
+            </div>
+            {productCopy.map((copy, index) => (
+              <div className="article-copy" key={index}>
+                <p
+                  id={`product-paragraph-${index}`}
+                  ref={(el) => (descriptionRefs.current[index] = el)}
+                >
+                  {copy}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

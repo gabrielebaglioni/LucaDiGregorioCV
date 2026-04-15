@@ -5,7 +5,6 @@ import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import CustomEase from "gsap/CustomEase";
-import { useTransitionRouter } from "next-view-transitions";
 import assets from "@/assets.json";
 
 gsap.registerPlugin(CustomEase);
@@ -50,10 +49,6 @@ const HOME = {
   heroDelayNoPreloader: 2.2,
   heroDurationWithPreloader: 3.2,
   heroDurationNoPreloader: 4.5,
-  /** View transition quando navighi via dalla home (ms) */
-  viewTransitionMs: 2800,
-  /** Blocco click durante la navigazione (ms) */
-  navAnimLockMs: 3200,
   /** Se la timeline GSAP si blocca, forza fine preloader (ms) */
   preloaderSafetyMs: 35000,
   /** Slideshow immagini hero (ms) */
@@ -61,9 +56,9 @@ const HOME = {
 };
 
 export default function Home() {
-  const router = useTransitionRouter();
-  const [isAnimating, setIsAnimating] = useState(false);
   const [activeProductImage, setActiveProductImage] = useState(0);
+  /** Incrementato ad ogni click sullo slider: rilancia l’interval e resetta il countdown. */
+  const [heroCarouselResetKey, setHeroCarouselResetKey] = useState(0);
   const [isHeroVisible, setIsHeroVisible] = useState(false);
   const container = useRef(null);
   const [showPreloader, setShowPreloader] = useState(isInitialLoad);
@@ -92,59 +87,7 @@ export default function Home() {
     }, HOME.heroCarouselIntervalMs);
 
     return () => clearInterval(interval);
-  }, [isHeroVisible]);
-
-  function slideInOut() {
-    document.documentElement.animate(
-      [
-        {
-          opacity: 1,
-          transform: "translateY(0)",
-        },
-        {
-          opacity: 0.2,
-          transform: "translateY(-35%)",
-        },
-      ],
-      {
-        duration: HOME.viewTransitionMs,
-        easing: "cubic-bezier(0.87, 0, 0.13, 1)",
-        fill: "forwards",
-        pseudoElement: "::view-transition-old(root)",
-      }
-    );
-
-    document.documentElement.animate(
-      [
-        {
-          clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-        },
-        {
-          clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-        },
-      ],
-      {
-        duration: HOME.viewTransitionMs,
-        easing: "cubic-bezier(0.87, 0, 0.13, 1)",
-        fill: "forwards",
-        pseudoElement: "::view-transition-new(root)",
-      }
-    );
-  }
-
-  const navigateTo = (path) => {
-    if (isAnimating) return;
-
-    setIsAnimating(true);
-
-    router.push(path, {
-      onTransitionReady: slideInOut,
-    });
-
-    setTimeout(() => {
-      setIsAnimating(false);
-    }, HOME.navAnimLockMs);
-  };
+  }, [isHeroVisible, heroCarouselResetKey]);
 
   useEffect(() => {
     if (!showPreloader) {
@@ -294,7 +237,12 @@ export default function Home() {
         <div className="home-hero">
           <div
             className="home-hero-image"
-            onClick={() => navigateTo(`/index/mirror-orb-mockup`)}
+            onClick={() => {
+              setActiveProductImage(
+                (current) => (current + 1) % productHeroImages.length
+              );
+              setHeroCarouselResetKey((k) => k + 1);
+            }}
           >
             {productHeroImages.map((image, index) => (
               <img

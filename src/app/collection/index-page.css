@@ -12,6 +12,63 @@
   gap: 2em;
 }
 
+.year-section-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.year-section-shell {
+  display: grid;
+  grid-template-rows: 1fr;
+  margin-top: 2em;
+  transition:
+    grid-template-rows 0.55s cubic-bezier(0.33, 1, 0.68, 1),
+    margin-top 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: grid-template-rows;
+}
+
+.year-section-group.is-collapsed .year-section-shell {
+  grid-template-rows: 0fr;
+  margin-top: 0;
+}
+
+.year-section-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.year-section-group.is-collapsed .year-section-inner {
+  pointer-events: none;
+}
+
+.year-divider-line {
+  height: 1px;
+  width: 100%;
+  max-height: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #fff;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition:
+    opacity 0.4s cubic-bezier(0.33, 1, 0.68, 1),
+    transform 0.5s cubic-bezier(0.33, 1, 0.68, 1),
+    max-height 0.45s cubic-bezier(0.33, 1, 0.68, 1),
+    margin 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.year-section-group.is-collapsed .year-divider-line {
+  max-height: 2px;
+  margin: 0.15em 0 0;
+  opacity: 0.9;
+  transform: scaleX(1);
+}
+
 .row {
   position: relative;
   display: flex;
@@ -29,6 +86,55 @@
   font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: 0.02em;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.35em;
+}
+
+.year-text {
+  display: inline-block;
+}
+
+.year-toggle {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  line-height: 0;
+  cursor: pointer;
+  padding: 0.15em;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: opacity 0.25s ease, background-color 0.25s ease;
+  opacity: 0.92;
+}
+
+.year-toggle:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.year-toggle:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 2px;
+}
+
+/* Chevron: chiuso = verso il basso; aperto = verso l’alto */
+.year-toggle-chevron {
+  display: inline-flex;
+  transition: transform 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+  transform: rotate(0deg);
+}
+
+.year-toggle:not(.collapsed) .year-toggle-chevron {
+  transform: rotate(-180deg);
 }
 
 .column {

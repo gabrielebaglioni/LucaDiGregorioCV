@@ -1,6 +1,6 @@
 "use client";
 import "./index-page.css";
-import { Fragment, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 import { generateSlug } from "@/utils";
 import products from "@/products";
@@ -82,6 +82,45 @@ const Page = () => {
     return result;
   })();
 
+  const allYears = Array.from(
+    new Set(Object.values(yearByRowIndex).filter((y) => y != null))
+  );
+
+  // 2025 parte chiuso: per vedere le opere serve “esplodere” l’apice.
+  const [collapsedByYear, setCollapsedByYear] = useState(() => {
+    const initial = {};
+    allYears.forEach((y) => {
+      initial[y] = false;
+    });
+    initial[2025] = true;
+    return initial;
+  });
+
+  const toggleYear = (year) => {
+    setCollapsedByYear((prev) => ({
+      ...prev,
+      [year]: !prev[year],
+    }));
+  };
+
+  const yearSectionStarts = Object.entries(yearByRowIndex)
+    .map(([k, v]) => ({ rowIndex: Number(k), year: v }))
+    .sort((a, b) => a.rowIndex - b.rowIndex);
+
+  const yearSections = yearSectionStarts.map((start, i) => {
+    const endRow =
+      i + 1 < yearSectionStarts.length
+        ? yearSectionStarts[i + 1].rowIndex
+        : productLayout.length;
+    return {
+      year: start.year,
+      rowIndices: Array.from(
+        { length: endRow - start.rowIndex },
+        (_, j) => start.rowIndex + j
+      ),
+    };
+  });
+
   function slideInOut() {
     document.documentElement.animate(
       [
@@ -136,7 +175,11 @@ const Page = () => {
 
   useGSAP(
     () => {
-      const rows = gsap.utils.toArray(".row");
+      const yearRows = gsap.utils.toArray(".year-row");
+      const productRows = gsap.utils.toArray(
+        ".year-section-group:not(.is-collapsed) .year-section-shell .row"
+      );
+      const rows = [...yearRows, ...productRows];
 
       gsap.fromTo(
         rows,
@@ -161,50 +204,104 @@ const Page = () => {
     <div className="index-page" ref={containerRef}>
       <div className="p-25"></div>
       <div className="products">
-        {productLayout.map((row, rowIndex) => (
-          <Fragment key={`group-${rowIndex}`}>
-            {yearByRowIndex[rowIndex] != null && (
-              <div className="row year-row" key={`year-${rowIndex}`}>
-                <div className="year-label">{yearByRowIndex[rowIndex]}</div>
-              </div>
-            )}
+        {yearSections.map((section) => {
+          const collapsed = collapsedByYear[section.year];
 
-            <div className="row" key={`row-${rowIndex}`}>
-              {row.map((column, colIndex) => (
-                <div
-                  className={`column ${
-                    column.length === 0 ? "empty-column" : ""
-                  }`}
-                  key={`col-${rowIndex}-${colIndex}`}
-                >
-                  {column.map((product) => (
-                    <div
-                      key={product.id}
-                      className="product-link"
-                      onClick={() =>
-                        navigateTo(`/index/${generateSlug(product.name)}`)
-                      }
-                    >
-                      <div className="product-card">
-                        <div className="product-card-image">
-                          <img
-                            src={product.previewImg}
-                            alt={product.name}
-                            className="product-card-img"
-                          />
-                        </div>
-                        <div className="product-info">
-                          <p className="product-card-name">{product.name}</p>
-                          <p className="product-card-price">${product.price}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+          return (
+            <div
+              className={`year-section-group ${collapsed ? "is-collapsed" : ""}`}
+              key={`section-${section.year}`}
+            >
+              <div className="row year-row">
+                <div className="year-label">
+                  <span className="year-text">{section.year}</span>
+                  <button
+                    type="button"
+                    className={`year-toggle ${collapsed ? "collapsed" : ""}`}
+                    aria-expanded={!collapsed}
+                    aria-label={
+                      collapsed
+                        ? `Apri ${section.year}`
+                        : `Chiudi ${section.year}`
+                    }
+                    onClick={() => toggleYear(section.year)}
+                  >
+                    <span className="year-toggle-chevron" aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        width="20"
+                        height="20"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M6 9l6 6 6-6" />
+                      </svg>
+                    </span>
+                  </button>
                 </div>
-              ))}
+              </div>
+
+              <div className="year-divider-line" aria-hidden="true" />
+
+              <div
+                className="year-section-shell"
+                aria-hidden={collapsed}
+                {...(collapsed ? { inert: "" } : {})}
+              >
+                <div className="year-section-inner">
+                  {section.rowIndices.map((rowIndex) => {
+                    const row = productLayout[rowIndex];
+                    return (
+                      <div className="row" key={`row-${rowIndex}`}>
+                        {row.map((column, colIndex) => (
+                          <div
+                            className={`column ${
+                              column.length === 0 ? "empty-column" : ""
+                            }`}
+                            key={`col-${rowIndex}-${colIndex}`}
+                          >
+                            {column.map((product) => (
+                              <div
+                                key={product.id}
+                                className="product-link"
+                                onClick={() =>
+                                  navigateTo(
+                                    `/index/${generateSlug(product.name)}`
+                                  )
+                                }
+                              >
+                                <div className="product-card">
+                                  <div className="product-card-image">
+                                    <img
+                                      src={product.previewImg}
+                                      alt={product.name}
+                                      className="product-card-img"
+                                    />
+                                  </div>
+                                  <div className="product-info">
+                                    <p className="product-card-name">
+                                      {product.name}
+                                    </p>
+                                    <p className="product-card-price">
+                                      ${product.price}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        ))}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
-          </Fragment>
-        ))}
+          );
+        })}
       </div>
       <div className="p-50"></div>
       <Footer />
