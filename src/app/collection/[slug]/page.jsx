@@ -21,7 +21,7 @@ const ProductDetail = () => {
   const productCopy = [
     product.description.bodyCopy1,
     product.description.bodyCopy2,
-  ];
+  ].filter(Boolean);
 
   return (
     <SharedDetailPage

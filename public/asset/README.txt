@@ -25,21 +25,27 @@ Campi principali da modificare:
 - year
 - date
 - description
-- galleryOrder
 
 4. Regole semplici:
 
 - tutte le opere si vedono sempre in index
-- tutte le opere si vedono sempre in detail
-- in gallery si vedono solo le opere che hanno galleryOrder compilato
-- lo slider home si controlla in featured.homeCarouselSlugs usando gli slug delle opere
-- la home usa l'immagine gallery dell'opera, oppure detail se gallery manca
+- il detail non ha un blocco separato nel JSON
+- il detail prende i dati dagli oggetti di gallery e index usando detailImage
+- in gallery si vedono le opere che hanno una vera immagine in `public/asset/gallery`
+- l'ordine in gallery e in index dipende dal nome file nella cartella
+- se vuoi controllare l'ordine usa prefissi come `01-`, `02-`, `03-`
+- lo slider home resta controllato da `featured.homeCarousel`
 
 5. Per collegare i file immagine usa "images":
 
 - images.gallery
 - images.index
-- images.detail
+
+oppure, nel JSON attuale:
+
+- galleryImage
+- indexImage
+- detailImage
 
 6. Esempio:
 
@@ -50,7 +56,6 @@ Campi principali da modificare:
   "year": 2026,
   "date": "2026-01-13",
   "description": "Testo descrizione oppure null",
-  "galleryOrder": 4,
   "images": {
     "gallery": "/asset/gallery/nome-opera.jpg",
     "index": "/asset/index/2026/02-nome-opera.jpg",
@@ -60,12 +65,12 @@ Campi principali da modificare:
 
 7. Esempio slider home:
 
-Nel blocco featured scrivi solo gli slug delle opere da mostrare:
+Nel blocco featured scrivi i path delle immagini da mostrare:
 
 {
-  "homeCarouselSlugs": [
-    "opera-uno",
-    "opera-due",
-    "opera-tre"
+  "homeCarousel": [
+    "/asset/slider/opera-uno.jpg",
+    "/asset/slider/opera-due.jpg",
+    "/asset/slider/opera-tre.jpg"
   ]
 }

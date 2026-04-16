@@ -27,6 +27,7 @@ export default function SharedDetailPage({
 }) {
   const containerRef = useRef(null);
   const descriptionRefs = useRef([]);
+  const hasDescription = bodyCopy.length > 0;
 
   useEffect(() => {
     const prevHtmlOverflow = document.documentElement.style.overflow;
@@ -140,25 +141,27 @@ export default function SharedDetailPage({
             </div>
           )}
 
-          <div className="article-copy">
-            <div className="revealer">
-              <p>{descriptionLabel}</p>
-            </div>
-            {bodyCopy.map((copy, index) => (
-              <div className="article-copy" key={index}>
-                <p
-                  id={
-                    variant === "gallery"
-                      ? `article-paragraph-${index}`
-                      : `product-paragraph-${index}`
-                  }
-                  ref={(el) => (descriptionRefs.current[index] = el)}
-                >
-                  {copy}
-                </p>
+          {hasDescription && (
+            <div className="article-copy">
+              <div className="revealer">
+                <p>{descriptionLabel}</p>
               </div>
-            ))}
-          </div>
+              {bodyCopy.map((copy, index) => (
+                <div className="article-copy" key={index}>
+                  <p
+                    id={
+                      variant === "gallery"
+                        ? `article-paragraph-${index}`
+                        : `product-paragraph-${index}`
+                    }
+                    ref={(el) => (descriptionRefs.current[index] = el)}
+                  >
+                    {copy}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

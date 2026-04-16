@@ -104,7 +104,6 @@ Ogni opera deve avere solo questi dati:
 - `year`
 - `date`
 - `description`
-- `galleryOrder`
 - `images.gallery`
 - `images.index`
 - `images.detail`
@@ -112,20 +111,21 @@ Ogni opera deve avere solo questi dati:
 ## Regole Di Visibilita
 
 - tutte le opere si vedono sempre in `index`
-- tutte le opere si vedono sempre in `detail`
-- in `gallery` si vedono solo le opere che hanno `galleryOrder`
-- lo slider home si controlla nel blocco `featured.homeCarouselSlugs`
+- il `detail` non ha un blocco separato nel JSON
+- il `detail` prende dati e immagine dagli oggetti di `gallery` e `index` tramite `detailImage`
+- in `gallery` si vedono le opere che hanno una vera immagine in `public/asset/gallery`
+- lo slider home si controlla nel blocco `featured.homeCarousel`
 
 ## Regole Di Ordine
 
-- `galleryOrder` decide l'ordine delle opere nella gallery
+- `gallery` non usa un campo nel JSON: l'ordine e dato dal nome file nella cartella `gallery`
 - `index` non usa un campo nel JSON: l'ordine e dato dal numero iniziale del file nella cartella anno, per esempio `01-...`, `02-...`, `03-...`
+- se vuoi controllare bene l'ordine usa sempre prefissi come `01-`, `02-`, `03-`
 
 ## Esempio Opera
 
 ```json
 {
-  "id": "panoramic-discovery-1",
   "slug": "panoramic-discovery-1",
   "title": "Panoramic Discovery 1",
   "dimensions": "120 x 80 cm",
@@ -133,14 +133,17 @@ Ogni opera deve avere solo questi dati:
   "year": 2026,
   "date": "2026-01-13",
   "description": null,
-  "galleryOrder": 7,
-  "images": {
-    "gallery": "/asset/gallery/panoramic-discovery-1.jpg",
-    "index": "/asset/index/2026/01-panoramic-discovery-1.jpg",
-    "detail": "/asset/detail/panoramic-discovery-1.jpg"
-  }
+  "galleryImage": "/asset/gallery/panoramic-discovery-1.jpg",
+  "detailImage": "/asset/detail/panoramic-discovery-1.jpg"
 }
 ```
+
+## Nota Sul Detail
+
+- non esiste piu una sezione `detail` separata nel JSON
+- quando clicchi un'opera in `gallery`, il detail usa i dati di quell'oggetto
+- quando clicchi un'opera in `index`, il detail usa i dati di quell'oggetto
+- in entrambi i casi l'immagine del dettaglio e `detailImage`
 
 ## Esempio Slider Home
 
@@ -148,10 +151,10 @@ Ogni opera deve avere solo questi dati:
 {
   "featured": {
     "homeHero": "/asset/pagina copertina entrata (nome, works, info)/zorrotzaurre .jpg",
-    "homeCarouselSlugs": [
-      "works-paintings-2026-dos-columnas-casa-roja",
-      "works-sculptures-2025-2026-el-perro-y-el-castillo",
-      "costruzioni-per-mostra"
+    "homeCarousel": [
+      "/asset/slider/works-paintings-2026-dos-columnas-casa-roja.jpg",
+      "/asset/slider/works-sculptures-2025-2026-el-perro-y-el-castillo.jpeg",
+      "/asset/slider/costruzioni-per-mostra.jpeg"
     ]
   }
 }

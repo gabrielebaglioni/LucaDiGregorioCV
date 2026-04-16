@@ -13,8 +13,8 @@ CustomEase.create("hop2", ".9, 0, .1, 1");
 
 let isInitialLoad = true;
 
-const rawCarousel = assets?.featured?.homeCarousel?.length
-  ? assets.featured.homeCarousel
+const rawCarousel = assets?.slider?.homeCarousel?.length
+  ? assets.slider.homeCarousel
   : [];
 /** Fallback so the hero is never empty (black screen). */
 const productHeroImages =
@@ -228,7 +228,7 @@ export default function Home() {
           </div>
 
           <div className="preloader-bg-img">
-            {assets?.featured?.homeHero && <img src={assets.featured.homeHero} alt="" />}
+            {assets?.slider?.homeHero && <img src={assets.slider.homeHero} alt="" />}
           </div>
         </>
       )}

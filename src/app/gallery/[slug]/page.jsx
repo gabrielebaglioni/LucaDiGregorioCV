@@ -21,7 +21,7 @@ const ArticleDetail = () => {
   return (
     <SharedDetailPage
       variant="gallery"
-      bannerSrc={article.bannerImg}
+      bannerSrc={article.detailImg || article.bannerImg}
       titleLabel="Title"
       title={article.title}
       authorLabel="Materials"
