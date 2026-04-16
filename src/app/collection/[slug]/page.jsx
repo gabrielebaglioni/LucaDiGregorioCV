@@ -1,5 +1,4 @@
 "use client";
-import "./product-detail.css";
 import { useParams } from "next/navigation";
 
 import { findProductBySlug } from "@/utils";

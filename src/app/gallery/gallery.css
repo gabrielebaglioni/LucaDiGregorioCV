@@ -43,9 +43,14 @@
 
 .article-image {
   width: 100%;
-  aspect-ratio: 16/9;
+  display: block;
   margin-bottom: 0.5em;
-  overflow: hidden;
+}
+
+.article-img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .article-info {
@@ -74,9 +79,5 @@
 
   .articles {
     gap: 3em;
-  }
-
-  .article-image {
-    aspect-ratio: 4/3;
   }
 }

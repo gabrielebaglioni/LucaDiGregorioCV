@@ -1,5 +1,4 @@
 "use client";
-import "./gallery-detail.css";
 import { useParams } from "next/navigation";
 
 import articles from "@/articles";

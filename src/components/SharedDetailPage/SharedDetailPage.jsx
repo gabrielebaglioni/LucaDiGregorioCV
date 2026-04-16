@@ -1,4 +1,5 @@
 "use client";
+import "./shared-detail-page.css";
 import { useEffect, useRef } from "react";
 
 import gsap from "gsap";

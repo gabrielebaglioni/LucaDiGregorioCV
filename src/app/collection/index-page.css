@@ -151,15 +151,14 @@
 
 .product-card-image {
   width: 100%;
-  aspect-ratio: 5/7;
+  display: block;
   margin-bottom: 0.5em;
-  overflow: hidden;
 }
 
 .product-card-img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
 }
 
 .product-info {
@@ -195,9 +194,5 @@
 
   .products {
     gap: 3em;
-  }
-
-  .product-card-image {
-    aspect-ratio: 4/3;
   }
 }

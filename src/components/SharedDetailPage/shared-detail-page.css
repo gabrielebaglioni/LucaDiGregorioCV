@@ -28,8 +28,24 @@
 
 .article-banner-img {
   width: 100%;
-  aspect-ratio: 16/9;
+  max-width: 100%;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 2em;
+  overflow: visible;
+  background: #000;
+}
+
+.article-banner-img img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: min(70svh, 900px);
+  object-fit: contain;
+  object-position: center;
 }
 
 .article-copy {
@@ -57,5 +73,14 @@
 @media (max-width: 900px) {
   .article-content {
     flex-direction: column-reverse;
+    margin: 8vh 0;
+  }
+
+  .article-banner-img {
+    justify-content: flex-start;
+  }
+
+  .article-banner-img img {
+    max-height: min(55svh, 560px);
   }
 }
