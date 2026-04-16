@@ -5,8 +5,14 @@ const LOREM_1 =
 const LOREM_2 =
   "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
+function getIndexOrderFromPath(path) {
+  const fileName = String(path || "").split("/").pop() || "";
+  const match = fileName.match(/^(\d+)-/);
+  return match ? Number(match[1]) : Number.MAX_SAFE_INTEGER;
+}
+
 const products = (assets?.items ?? [])
-  .filter((item) => item?.image)
+  .filter((item) => item?.images?.index)
   .slice()
   .sort((a, b) => {
     const aYear = Number.isFinite(a?.year) ? a.year : null;
@@ -17,6 +23,10 @@ const products = (assets?.items ?? [])
     if (aYear != null && bYear == null) return -1;
     if (aYear != null && bYear != null && aYear !== bYear) return bYear - aYear;
 
+    const aOrder = getIndexOrderFromPath(a?.images?.index);
+    const bOrder = getIndexOrderFromPath(b?.images?.index);
+    if (aOrder !== bOrder) return aOrder - bOrder;
+
     // stable-ish fallback (keeps a consistent order within the same year)
     return String(a.title || "").localeCompare(String(b.title || ""));
   })
@@ -25,13 +35,14 @@ const products = (assets?.items ?? [])
     category: item.kind,
     name: item.title,
     description: { bodyCopy1: item.description ?? LOREM_1, bodyCopy2: LOREM_2 },
-    designer: "Lorem Ipsum",
+    designer: item.materials || "—",
     price: 0,
     year: item.year,
     date: item.date,
     fileType: "JPG",
-    previewImg: item.image, // absolute public path: /asset/...
-    productImages: item.images?.length ? item.images : [item.image],
+    dimensions: item.dimensions || "",
+    previewImg: item.images.index,
+    productImages: [item.images.detail || item.images.index].filter(Boolean),
     compatibility: "—",
   }));
 

@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "notes": {
+    "purpose": "Template guida per organizzare immagini e metadati delle opere.",
+    "onlyRequiredMetadata": [
+      "id",
+      "slug",
+      "title",
+      "dimensions",
+      "materials",
+      "year",
+      "date",
+      "description",
+      "order",
+      "images"
+    ],
+    "removedFields": [
+      "price",
+      "author",
+      "extraDetailFields"
+    ]
+  },
+  "imageProfiles": {
+    "slider": {
+      "folder": "asset/slider",
+      "shape": "horizontal",
+      "recommendedAspectRatio": "1.9:1",
+      "idealSizePx": {
+        "width": 2400,
+        "height": 1260
+      },
+      "minimumSizePx": {
+        "width": 1800,
+        "height": 950
+      }
+    },
+    "gallery": {
+      "folder": "asset/gallery",
+      "shape": "horizontal",
+      "recommendedAspectRatio": "16:9",
+      "idealSizePx": {
+        "width": 2000,
+        "height": 1125
+      },
+      "minimumSizePx": {
+        "width": 1600,
+        "height": 900
+      }
+    },
+    "index": {
+      "folder": "asset/index/<year>",
+      "shape": "vertical",
+      "recommendedAspectRatio": "5:7",
+      "idealSizePx": {
+        "width": 1500,
+        "height": 2100
+      },
+      "minimumSizePx": {
+        "width": 1200,
+        "height": 1680
+      },
+      "orderingRule": "Dentro ogni anno usare order crescente e prefisso numerico nel nome file: 01-, 02-, 03-."
+    },
+    "detail": {
+      "folder": "asset/detail",
+      "shape": "free",
+      "recommendedLongestSidePx": 2400,
+      "minimumLongestSidePx": 2200
+    }
+  },
+  "artworks": [
+    {
+      "id": "panoramic-discovery-1",
+      "slug": "panoramic-discovery-1",
+      "title": "Panoramic Discovery 1",
+      "dimensions": "120 x 80 cm",
+      "materials": "oil on canvas",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 1,
+      "images": {
+        "slider": "/asset/slider/panoramic-discovery-1.jpg",
+        "gallery": "/asset/gallery/panoramic-discovery-1.jpg",
+        "index": "/asset/index/2026/01-panoramic-discovery-1.jpg",
+        "detail": "/asset/detail/panoramic-discovery-1.jpg"
+      }
+    }
+  ]
+}

@@ -151,7 +151,7 @@ const Page = () => {
                     </div>
                     <div className="article-info">
                       <p className="article-title">{article.title}</p>
-                      <p className="article-author">{article.author}</p>
+                      <p className="article-author">{article.dimensions}</p>
                     </div>
                   </div>
                 )}

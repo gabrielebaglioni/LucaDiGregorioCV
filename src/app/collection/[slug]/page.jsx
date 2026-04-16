@@ -27,11 +27,11 @@ const ProductDetail = () => {
     <SharedDetailPage
       variant="index"
       bannerSrc={product.productImages[0]}
-      titleLabel="Product Name"
+      titleLabel="Title"
       title={product.name}
-      authorLabel="Designer"
+      authorLabel="Materials"
       author={product.designer}
-      tags={[product.category, product.fileType, product.compatibility]}
+      tags={[]}
       date={product.date}
       bodyCopy={productCopy}
     />

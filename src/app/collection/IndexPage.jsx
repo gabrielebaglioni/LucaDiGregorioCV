@@ -249,7 +249,7 @@ const Page = () => {
               <div
                 className="year-section-shell"
                 aria-hidden={collapsed}
-                {...(collapsed ? { inert: "" } : {})}
+                inert={collapsed || undefined}
               >
                 <div className="year-section-inner">
                   {section.rowIndices.map((rowIndex) => {
@@ -286,7 +286,7 @@ const Page = () => {
                                       {product.name}
                                     </p>
                                     <p className="product-card-price">
-                                      ${product.price}
+                                      {product.dimensions}
                                     </p>
                                   </div>
                                 </div>

@@ -22,11 +22,11 @@ const ArticleDetail = () => {
     <SharedDetailPage
       variant="gallery"
       bannerSrc={article.bannerImg}
-      titleLabel="Article Name"
+      titleLabel="Title"
       title={article.title}
-      authorLabel="Author"
-      author={article.author}
-      tags={article.tags}
+      authorLabel="Materials"
+      author={article.materials}
+      tags={[]}
       date={article.date}
       bodyCopy={article.bodyCopy?.slice(0, 1) ?? []}
     />

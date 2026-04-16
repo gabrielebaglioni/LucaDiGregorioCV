@@ -1,0 +1,1214 @@
+{
+  "version": 1,
+  "baseFolder": "/asset",
+  "folderStructure": {
+    "slider": "/asset/slider",
+    "gallery": "/asset/gallery",
+    "index": "/asset/index/<year>",
+    "detail": "/asset/detail"
+  },
+  "requiredMetadata": [
+    "id",
+    "slug",
+    "title",
+    "dimensions",
+    "materials",
+    "year",
+    "date",
+    "description",
+    "order",
+    "images"
+  ],
+  "artworks": [
+    {
+      "id": "dscf1068-2",
+      "slug": "dscf1068-2",
+      "title": "DSCF1068 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 1,
+      "images": {
+        "slider": "/asset/slider/dscf1068-2.jpg",
+        "gallery": "/asset/gallery/dscf1068-2.jpg",
+        "index": "/asset/index/2026/01-dscf1068-2.jpg",
+        "detail": "/asset/detail/dscf1068-2.jpg"
+      }
+    },
+    {
+      "id": "dscf1069-2",
+      "slug": "dscf1069-2",
+      "title": "DSCF1069 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 2,
+      "images": {
+        "slider": "/asset/slider/dscf1069-2.jpg",
+        "gallery": "/asset/gallery/dscf1069-2.jpg",
+        "index": "/asset/index/2026/02-dscf1069-2.jpg",
+        "detail": "/asset/detail/dscf1069-2.jpg"
+      }
+    },
+    {
+      "id": "dscf1114-2",
+      "slug": "dscf1114-2",
+      "title": "DSCF1114 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 3,
+      "images": {
+        "slider": "/asset/slider/dscf1114-2.jpg",
+        "gallery": "/asset/gallery/dscf1114-2.jpg",
+        "index": "/asset/index/2026/03-dscf1114-2.jpg",
+        "detail": "/asset/detail/dscf1114-2.jpg"
+      }
+    },
+    {
+      "id": "dscf1169-2",
+      "slug": "dscf1169-2",
+      "title": "DSCF1169 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 4,
+      "images": {
+        "slider": "/asset/slider/dscf1169-2.jpg",
+        "gallery": "/asset/gallery/dscf1169-2.jpg",
+        "index": "/asset/index/2026/04-dscf1169-2.jpg",
+        "detail": "/asset/detail/dscf1169-2.jpg"
+      }
+    },
+    {
+      "id": "img-1519",
+      "slug": "img-1519",
+      "title": "IMG 1519",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 5,
+      "images": {
+        "slider": "/asset/slider/img-1519.jpeg",
+        "gallery": "/asset/gallery/img-1519.jpeg",
+        "index": "/asset/index/2026/05-img-1519.jpeg",
+        "detail": "/asset/detail/img-1519.jpeg"
+      }
+    },
+    {
+      "id": "img-7505",
+      "slug": "img-7505",
+      "title": "IMG 7505",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 6,
+      "images": {
+        "slider": "/asset/slider/img-7505.jpeg",
+        "gallery": "/asset/gallery/img-7505.jpeg",
+        "index": "/asset/index/2026/06-img-7505.jpeg",
+        "detail": "/asset/detail/img-7505.jpeg"
+      }
+    },
+    {
+      "id": "img-7515",
+      "slug": "img-7515",
+      "title": "IMG 7515",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 7,
+      "images": {
+        "slider": "/asset/slider/img-7515.jpeg",
+        "gallery": "/asset/gallery/img-7515.jpeg",
+        "index": "/asset/index/2026/07-img-7515.jpeg",
+        "detail": "/asset/detail/img-7515.jpeg"
+      }
+    },
+    {
+      "id": "costruzioni-per-mostra",
+      "slug": "costruzioni-per-mostra",
+      "title": "costruzioni per mostra",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 8,
+      "images": {
+        "slider": "/asset/slider/costruzioni-per-mostra.jpeg",
+        "gallery": "/asset/gallery/costruzioni-per-mostra.jpeg",
+        "index": "/asset/index/2026/08-costruzioni-per-mostra.jpeg",
+        "detail": "/asset/detail/costruzioni-per-mostra.jpeg"
+      }
+    },
+    {
+      "id": "pagina-copertina-entrata-nome-works-info-d07ed795-3563-4c8b-858f-f966598cbb2e-1",
+      "slug": "pagina-copertina-entrata-nome-works-info-d07ed795-3563-4c8b-858f-f966598cbb2e-1",
+      "title": "D07ED795 3563 4C8B 858F F966598CBB2E (1)",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 9,
+      "images": {
+        "slider": "/asset/slider/pagina-copertina-entrata-nome-works-info-d07ed795-3563-4c8b-858f-f966598cbb2e-1.jpeg",
+        "gallery": "/asset/gallery/pagina-copertina-entrata-nome-works-info-d07ed795-3563-4c8b-858f-f966598cbb2e-1.jpeg",
+        "index": "/asset/index/2026/09-pagina-copertina-entrata-nome-works-info-d07ed795-3563-4c8b-858f-f966598cbb2e-1.jpeg",
+        "detail": "/asset/detail/pagina-copertina-entrata-nome-works-info-d07ed795-3563-4c8b-858f-f966598cbb2e-1.jpeg"
+      }
+    },
+    {
+      "id": "pagina-copertina-entrata-nome-works-info-d70dc823-4312-475a-a8a5-34391c7a866c",
+      "slug": "pagina-copertina-entrata-nome-works-info-d70dc823-4312-475a-a8a5-34391c7a866c",
+      "title": "D70DC823 4312 475A A8A5 34391C7A866C",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 10,
+      "images": {
+        "slider": "/asset/slider/pagina-copertina-entrata-nome-works-info-d70dc823-4312-475a-a8a5-34391c7a866c.jpg",
+        "gallery": "/asset/gallery/pagina-copertina-entrata-nome-works-info-d70dc823-4312-475a-a8a5-34391c7a866c.jpg",
+        "index": "/asset/index/2026/10-pagina-copertina-entrata-nome-works-info-d70dc823-4312-475a-a8a5-34391c7a866c.jpg",
+        "detail": "/asset/detail/pagina-copertina-entrata-nome-works-info-d70dc823-4312-475a-a8a5-34391c7a866c.jpg"
+      }
+    },
+    {
+      "id": "pagina-copertina-entrata-nome-works-info-img-1515-copia",
+      "slug": "pagina-copertina-entrata-nome-works-info-img-1515-copia",
+      "title": "IMG 1515 copia",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 11,
+      "images": {
+        "slider": "/asset/slider/pagina-copertina-entrata-nome-works-info-img-1515-copia.jpg",
+        "gallery": "/asset/gallery/pagina-copertina-entrata-nome-works-info-img-1515-copia.jpg",
+        "index": "/asset/index/2026/11-pagina-copertina-entrata-nome-works-info-img-1515-copia.jpg",
+        "detail": "/asset/detail/pagina-copertina-entrata-nome-works-info-img-1515-copia.jpg"
+      }
+    },
+    {
+      "id": "pagina-copertina-entrata-nome-works-info-blind-drive",
+      "slug": "pagina-copertina-entrata-nome-works-info-blind-drive",
+      "title": "blind drive",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 12,
+      "images": {
+        "slider": "/asset/slider/pagina-copertina-entrata-nome-works-info-blind-drive.jpeg",
+        "gallery": "/asset/gallery/pagina-copertina-entrata-nome-works-info-blind-drive.jpeg",
+        "index": "/asset/index/2026/12-pagina-copertina-entrata-nome-works-info-blind-drive.jpeg",
+        "detail": "/asset/detail/pagina-copertina-entrata-nome-works-info-blind-drive.jpeg"
+      }
+    },
+    {
+      "id": "pagina-copertina-entrata-nome-works-info-truck",
+      "slug": "pagina-copertina-entrata-nome-works-info-truck",
+      "title": "truck",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 13,
+      "images": {
+        "slider": "/asset/slider/pagina-copertina-entrata-nome-works-info-truck.jpeg",
+        "gallery": "/asset/gallery/pagina-copertina-entrata-nome-works-info-truck.jpeg",
+        "index": "/asset/index/2026/13-pagina-copertina-entrata-nome-works-info-truck.jpeg",
+        "detail": "/asset/detail/pagina-copertina-entrata-nome-works-info-truck.jpeg"
+      }
+    },
+    {
+      "id": "pagina-copertina-entrata-nome-works-info-zorrotzaurre-copia",
+      "slug": "pagina-copertina-entrata-nome-works-info-zorrotzaurre-copia",
+      "title": "zorrotzaurre copia",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 14,
+      "images": {
+        "slider": "/asset/slider/pagina-copertina-entrata-nome-works-info-zorrotzaurre-copia.jpg",
+        "gallery": "/asset/gallery/pagina-copertina-entrata-nome-works-info-zorrotzaurre-copia.jpg",
+        "index": "/asset/index/2026/14-pagina-copertina-entrata-nome-works-info-zorrotzaurre-copia.jpg",
+        "detail": "/asset/detail/pagina-copertina-entrata-nome-works-info-zorrotzaurre-copia.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2025-img20260415-13020790",
+      "slug": "works-papers-2025-img20260415-13020790",
+      "title": "img20260415 13020790",
+      "dimensions": "",
+      "materials": "",
+      "year": 2025,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 1,
+      "images": {
+        "slider": "/asset/slider/works-papers-2025-img20260415-13020790.jpg",
+        "gallery": "/asset/gallery/works-papers-2025-img20260415-13020790.jpg",
+        "index": "/asset/index/2025/01-works-papers-2025-img20260415-13020790.jpg",
+        "detail": "/asset/detail/works-papers-2025-img20260415-13020790.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2025-img20260415-13030867",
+      "slug": "works-papers-2025-img20260415-13030867",
+      "title": "img20260415 13030867",
+      "dimensions": "",
+      "materials": "",
+      "year": 2025,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 2,
+      "images": {
+        "slider": "/asset/slider/works-papers-2025-img20260415-13030867.jpg",
+        "gallery": "/asset/gallery/works-papers-2025-img20260415-13030867.jpg",
+        "index": "/asset/index/2025/02-works-papers-2025-img20260415-13030867.jpg",
+        "detail": "/asset/detail/works-papers-2025-img20260415-13030867.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2025-img20260415-13035362",
+      "slug": "works-papers-2025-img20260415-13035362",
+      "title": "img20260415 13035362",
+      "dimensions": "",
+      "materials": "",
+      "year": 2025,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 3,
+      "images": {
+        "slider": "/asset/slider/works-papers-2025-img20260415-13035362.jpg",
+        "gallery": "/asset/gallery/works-papers-2025-img20260415-13035362.jpg",
+        "index": "/asset/index/2025/03-works-papers-2025-img20260415-13035362.jpg",
+        "detail": "/asset/detail/works-papers-2025-img20260415-13035362.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2025-img20260415-13042218",
+      "slug": "works-papers-2025-img20260415-13042218",
+      "title": "img20260415 13042218",
+      "dimensions": "",
+      "materials": "",
+      "year": 2025,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 4,
+      "images": {
+        "slider": "/asset/slider/works-papers-2025-img20260415-13042218.jpg",
+        "gallery": "/asset/gallery/works-papers-2025-img20260415-13042218.jpg",
+        "index": "/asset/index/2025/04-works-papers-2025-img20260415-13042218.jpg",
+        "detail": "/asset/detail/works-papers-2025-img20260415-13042218.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2025-img20260415-13050262",
+      "slug": "works-papers-2025-img20260415-13050262",
+      "title": "img20260415 13050262",
+      "dimensions": "",
+      "materials": "",
+      "year": 2025,
+      "date": "2026-04-15",
+      "description": null,
+      "order": 5,
+      "images": {
+        "slider": "/asset/slider/works-papers-2025-img20260415-13050262.jpg",
+        "gallery": "/asset/gallery/works-papers-2025-img20260415-13050262.jpg",
+        "index": "/asset/index/2025/05-works-papers-2025-img20260415-13050262.jpg",
+        "detail": "/asset/detail/works-papers-2025-img20260415-13050262.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13024926-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13024926-2",
+      "title": "img20260113 13024926 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 15,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13024926-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13024926-2.jpg",
+        "index": "/asset/index/2026/15-works-papers-2026-basque-grammar-img20260113-13024926-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13024926-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13035856-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13035856-2",
+      "title": "img20260113 13035856 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 16,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13035856-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13035856-2.jpg",
+        "index": "/asset/index/2026/16-works-papers-2026-basque-grammar-img20260113-13035856-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13035856-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13044742-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13044742-2",
+      "title": "img20260113 13044742 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 17,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13044742-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13044742-2.jpg",
+        "index": "/asset/index/2026/17-works-papers-2026-basque-grammar-img20260113-13044742-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13044742-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13055213-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13055213-2",
+      "title": "img20260113 13055213 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 18,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13055213-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13055213-2.jpg",
+        "index": "/asset/index/2026/18-works-papers-2026-basque-grammar-img20260113-13055213-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13055213-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13064363-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13064363-2",
+      "title": "img20260113 13064363 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 19,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13064363-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13064363-2.jpg",
+        "index": "/asset/index/2026/19-works-papers-2026-basque-grammar-img20260113-13064363-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13064363-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13072835-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13072835-2",
+      "title": "img20260113 13072835 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 20,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13072835-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13072835-2.jpg",
+        "index": "/asset/index/2026/20-works-papers-2026-basque-grammar-img20260113-13072835-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13072835-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13094858-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13094858-2",
+      "title": "img20260113 13094858 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 21,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13094858-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13094858-2.jpg",
+        "index": "/asset/index/2026/21-works-papers-2026-basque-grammar-img20260113-13094858-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13094858-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13103940-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13103940-2",
+      "title": "img20260113 13103940 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 22,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13103940-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13103940-2.jpg",
+        "index": "/asset/index/2026/22-works-papers-2026-basque-grammar-img20260113-13103940-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13103940-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13112917-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13112917-2",
+      "title": "img20260113 13112917 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 23,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13112917-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13112917-2.jpg",
+        "index": "/asset/index/2026/23-works-papers-2026-basque-grammar-img20260113-13112917-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13112917-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13122312-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13122312-2",
+      "title": "img20260113 13122312 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 24,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13122312-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13122312-2.jpg",
+        "index": "/asset/index/2026/24-works-papers-2026-basque-grammar-img20260113-13122312-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13122312-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13132040-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13132040-2",
+      "title": "img20260113 13132040 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 25,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13132040-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13132040-2.jpg",
+        "index": "/asset/index/2026/25-works-papers-2026-basque-grammar-img20260113-13132040-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13132040-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13143215-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13143215-2",
+      "title": "img20260113 13143215 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 26,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13143215-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13143215-2.jpg",
+        "index": "/asset/index/2026/26-works-papers-2026-basque-grammar-img20260113-13143215-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13143215-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13151248-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13151248-2",
+      "title": "img20260113 13151248 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 27,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13151248-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13151248-2.jpg",
+        "index": "/asset/index/2026/27-works-papers-2026-basque-grammar-img20260113-13151248-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13151248-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13160689-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13160689-2",
+      "title": "img20260113 13160689 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 28,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13160689-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13160689-2.jpg",
+        "index": "/asset/index/2026/28-works-papers-2026-basque-grammar-img20260113-13160689-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13160689-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13180200-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13180200-2",
+      "title": "img20260113 13180200 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 29,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13180200-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13180200-2.jpg",
+        "index": "/asset/index/2026/29-works-papers-2026-basque-grammar-img20260113-13180200-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13180200-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13184019-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13184019-2",
+      "title": "img20260113 13184019 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 30,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13184019-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13184019-2.jpg",
+        "index": "/asset/index/2026/30-works-papers-2026-basque-grammar-img20260113-13184019-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13184019-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13192062-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13192062-2",
+      "title": "img20260113 13192062 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 31,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13192062-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13192062-2.jpg",
+        "index": "/asset/index/2026/31-works-papers-2026-basque-grammar-img20260113-13192062-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13192062-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13195935-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13195935-2",
+      "title": "img20260113 13195935 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 32,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13195935-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13195935-2.jpg",
+        "index": "/asset/index/2026/32-works-papers-2026-basque-grammar-img20260113-13195935-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13195935-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13204420-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13204420-2",
+      "title": "img20260113 13204420 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 33,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13204420-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13204420-2.jpg",
+        "index": "/asset/index/2026/33-works-papers-2026-basque-grammar-img20260113-13204420-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13204420-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-basque-grammar-img20260113-13213001-2",
+      "slug": "works-papers-2026-basque-grammar-img20260113-13213001-2",
+      "title": "img20260113 13213001 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-13",
+      "description": null,
+      "order": 34,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-basque-grammar-img20260113-13213001-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-basque-grammar-img20260113-13213001-2.jpg",
+        "index": "/asset/index/2026/34-works-papers-2026-basque-grammar-img20260113-13213001-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-basque-grammar-img20260113-13213001-2.jpg"
+      }
+    },
+    {
+      "id": "works-paintings-2026-a17c49ce-7e16-49e7-b598-b4f63a059518-1-102-a-2",
+      "slug": "works-paintings-2026-a17c49ce-7e16-49e7-b598-b4f63a059518-1-102-a-2",
+      "title": "A17C49CE 7E16 49E7 B598 B4F63A059518 1 102 a 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 35,
+      "images": {
+        "slider": "/asset/slider/works-paintings-2026-a17c49ce-7e16-49e7-b598-b4f63a059518-1-102-a-2.jpg",
+        "gallery": "/asset/gallery/works-paintings-2026-a17c49ce-7e16-49e7-b598-b4f63a059518-1-102-a-2.jpg",
+        "index": "/asset/index/2026/35-works-paintings-2026-a17c49ce-7e16-49e7-b598-b4f63a059518-1-102-a-2.jpg",
+        "detail": "/asset/detail/works-paintings-2026-a17c49ce-7e16-49e7-b598-b4f63a059518-1-102-a-2.jpg"
+      }
+    },
+    {
+      "id": "works-paintings-2026-bones",
+      "slug": "works-paintings-2026-bones",
+      "title": "bones",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 36,
+      "images": {
+        "slider": "/asset/slider/works-paintings-2026-bones.jpg",
+        "gallery": "/asset/gallery/works-paintings-2026-bones.jpg",
+        "index": "/asset/index/2026/36-works-paintings-2026-bones.jpg",
+        "detail": "/asset/detail/works-paintings-2026-bones.jpg"
+      }
+    },
+    {
+      "id": "works-paintings-2026-dos-columnas-casa-roja",
+      "slug": "works-paintings-2026-dos-columnas-casa-roja",
+      "title": "dos columnas, casa roja",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 37,
+      "images": {
+        "slider": "/asset/slider/works-paintings-2026-dos-columnas-casa-roja.jpg",
+        "gallery": "/asset/gallery/works-paintings-2026-dos-columnas-casa-roja.jpg",
+        "index": "/asset/index/2026/37-works-paintings-2026-dos-columnas-casa-roja.jpg",
+        "detail": "/asset/detail/works-paintings-2026-dos-columnas-casa-roja.jpg"
+      }
+    },
+    {
+      "id": "works-paintings-2026-la-casa-roja-la-caja-rosa",
+      "slug": "works-paintings-2026-la-casa-roja-la-caja-rosa",
+      "title": "la casa roja, la caja rosa",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 38,
+      "images": {
+        "slider": "/asset/slider/works-paintings-2026-la-casa-roja-la-caja-rosa.jpg",
+        "gallery": "/asset/gallery/works-paintings-2026-la-casa-roja-la-caja-rosa.jpg",
+        "index": "/asset/index/2026/38-works-paintings-2026-la-casa-roja-la-caja-rosa.jpg",
+        "detail": "/asset/detail/works-paintings-2026-la-casa-roja-la-caja-rosa.jpg"
+      }
+    },
+    {
+      "id": "works-paintings-2026-panoramic-discoveries-5",
+      "slug": "works-paintings-2026-panoramic-discoveries-5",
+      "title": "panoramic discoveries 5",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 39,
+      "images": {
+        "slider": "/asset/slider/works-paintings-2026-panoramic-discoveries-5.jpg",
+        "gallery": "/asset/gallery/works-paintings-2026-panoramic-discoveries-5.jpg",
+        "index": "/asset/index/2026/39-works-paintings-2026-panoramic-discoveries-5.jpg",
+        "detail": "/asset/detail/works-paintings-2026-panoramic-discoveries-5.jpg"
+      }
+    },
+    {
+      "id": "works-paintings-2026-panoramic-discovery-1",
+      "slug": "works-paintings-2026-panoramic-discovery-1",
+      "title": "panoramic discovery 1",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 40,
+      "images": {
+        "slider": "/asset/slider/works-paintings-2026-panoramic-discovery-1.jpg",
+        "gallery": "/asset/gallery/works-paintings-2026-panoramic-discovery-1.jpg",
+        "index": "/asset/index/2026/40-works-paintings-2026-panoramic-discovery-1.jpg",
+        "detail": "/asset/detail/works-paintings-2026-panoramic-discovery-1.jpg"
+      }
+    },
+    {
+      "id": "works-paintings-2026-panoramic-discovery-2",
+      "slug": "works-paintings-2026-panoramic-discovery-2",
+      "title": "panoramic discovery 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 41,
+      "images": {
+        "slider": "/asset/slider/works-paintings-2026-panoramic-discovery-2.jpg",
+        "gallery": "/asset/gallery/works-paintings-2026-panoramic-discovery-2.jpg",
+        "index": "/asset/index/2026/41-works-paintings-2026-panoramic-discovery-2.jpg",
+        "detail": "/asset/detail/works-paintings-2026-panoramic-discovery-2.jpg"
+      }
+    },
+    {
+      "id": "works-paintings-2026-panoramic-discovery-3",
+      "slug": "works-paintings-2026-panoramic-discovery-3",
+      "title": "panoramic discovery 3",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 42,
+      "images": {
+        "slider": "/asset/slider/works-paintings-2026-panoramic-discovery-3.jpg",
+        "gallery": "/asset/gallery/works-paintings-2026-panoramic-discovery-3.jpg",
+        "index": "/asset/index/2026/42-works-paintings-2026-panoramic-discovery-3.jpg",
+        "detail": "/asset/detail/works-paintings-2026-panoramic-discovery-3.jpg"
+      }
+    },
+    {
+      "id": "works-paintings-2026-panoramic-discovery-4",
+      "slug": "works-paintings-2026-panoramic-discovery-4",
+      "title": "panoramic discovery 4",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 43,
+      "images": {
+        "slider": "/asset/slider/works-paintings-2026-panoramic-discovery-4.jpg",
+        "gallery": "/asset/gallery/works-paintings-2026-panoramic-discovery-4.jpg",
+        "index": "/asset/index/2026/43-works-paintings-2026-panoramic-discovery-4.jpg",
+        "detail": "/asset/detail/works-paintings-2026-panoramic-discovery-4.jpg"
+      }
+    },
+    {
+      "id": "works-paintings-2026-zorrotzaurre-dettaglio-1",
+      "slug": "works-paintings-2026-zorrotzaurre-dettaglio-1",
+      "title": "zorrotzaurre dettaglio 1",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 44,
+      "images": {
+        "slider": "/asset/slider/works-paintings-2026-zorrotzaurre-dettaglio-1.jpg",
+        "gallery": "/asset/gallery/works-paintings-2026-zorrotzaurre-dettaglio-1.jpg",
+        "index": "/asset/index/2026/44-works-paintings-2026-zorrotzaurre-dettaglio-1.jpg",
+        "detail": "/asset/detail/works-paintings-2026-zorrotzaurre-dettaglio-1.jpg"
+      }
+    },
+    {
+      "id": "works-paintings-2026-zorrotzaurre-dettaglio-2",
+      "slug": "works-paintings-2026-zorrotzaurre-dettaglio-2",
+      "title": "zorrotzaurre dettaglio 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 45,
+      "images": {
+        "slider": "/asset/slider/works-paintings-2026-zorrotzaurre-dettaglio-2.jpg",
+        "gallery": "/asset/gallery/works-paintings-2026-zorrotzaurre-dettaglio-2.jpg",
+        "index": "/asset/index/2026/45-works-paintings-2026-zorrotzaurre-dettaglio-2.jpg",
+        "detail": "/asset/detail/works-paintings-2026-zorrotzaurre-dettaglio-2.jpg"
+      }
+    },
+    {
+      "id": "works-paintings-2026-zorrotzaurre",
+      "slug": "works-paintings-2026-zorrotzaurre",
+      "title": "zorrotzaurre",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 46,
+      "images": {
+        "slider": "/asset/slider/works-paintings-2026-zorrotzaurre.jpg",
+        "gallery": "/asset/gallery/works-paintings-2026-zorrotzaurre.jpg",
+        "index": "/asset/index/2026/46-works-paintings-2026-zorrotzaurre.jpg",
+        "detail": "/asset/detail/works-paintings-2026-zorrotzaurre.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-etapas-nervion-etapas-del-nervion-2",
+      "slug": "works-papers-2026-etapas-nervion-etapas-del-nervion-2",
+      "title": "etapas del nervion 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 47,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-etapas-nervion-etapas-del-nervion-2.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-etapas-nervion-etapas-del-nervion-2.jpg",
+        "index": "/asset/index/2026/47-works-papers-2026-etapas-nervion-etapas-del-nervion-2.jpg",
+        "detail": "/asset/detail/works-papers-2026-etapas-nervion-etapas-del-nervion-2.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-etapas-nervion-etapas-del-nervion-3",
+      "slug": "works-papers-2026-etapas-nervion-etapas-del-nervion-3",
+      "title": "etapas del nervion 3",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 48,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-etapas-nervion-etapas-del-nervion-3.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-etapas-nervion-etapas-del-nervion-3.jpg",
+        "index": "/asset/index/2026/48-works-papers-2026-etapas-nervion-etapas-del-nervion-3.jpg",
+        "detail": "/asset/detail/works-papers-2026-etapas-nervion-etapas-del-nervion-3.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-etapas-nervion-etapas-del-nervion-4",
+      "slug": "works-papers-2026-etapas-nervion-etapas-del-nervion-4",
+      "title": "etapas del nervion 4",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 49,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-etapas-nervion-etapas-del-nervion-4.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-etapas-nervion-etapas-del-nervion-4.jpg",
+        "index": "/asset/index/2026/49-works-papers-2026-etapas-nervion-etapas-del-nervion-4.jpg",
+        "detail": "/asset/detail/works-papers-2026-etapas-nervion-etapas-del-nervion-4.jpg"
+      }
+    },
+    {
+      "id": "works-papers-2026-etapas-nervion-etapas-del-nervion",
+      "slug": "works-papers-2026-etapas-nervion-etapas-del-nervion",
+      "title": "etapas del nervion",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 50,
+      "images": {
+        "slider": "/asset/slider/works-papers-2026-etapas-nervion-etapas-del-nervion.jpg",
+        "gallery": "/asset/gallery/works-papers-2026-etapas-nervion-etapas-del-nervion.jpg",
+        "index": "/asset/index/2026/50-works-papers-2026-etapas-nervion-etapas-del-nervion.jpg",
+        "detail": "/asset/detail/works-papers-2026-etapas-nervion-etapas-del-nervion.jpg"
+      }
+    },
+    {
+      "id": "works-sculptures-2025-2026-el-perro",
+      "slug": "works-sculptures-2025-2026-el-perro",
+      "title": "El Perro",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 51,
+      "images": {
+        "slider": "/asset/slider/works-sculptures-2025-2026-el-perro.jpeg",
+        "gallery": "/asset/gallery/works-sculptures-2025-2026-el-perro.jpeg",
+        "index": "/asset/index/2026/51-works-sculptures-2025-2026-el-perro.jpeg",
+        "detail": "/asset/detail/works-sculptures-2025-2026-el-perro.jpeg"
+      }
+    },
+    {
+      "id": "works-sculptures-2025-2026-antenna",
+      "slug": "works-sculptures-2025-2026-antenna",
+      "title": "antenna",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 52,
+      "images": {
+        "slider": "/asset/slider/works-sculptures-2025-2026-antenna.jpeg",
+        "gallery": "/asset/gallery/works-sculptures-2025-2026-antenna.jpeg",
+        "index": "/asset/index/2026/52-works-sculptures-2025-2026-antenna.jpeg",
+        "detail": "/asset/detail/works-sculptures-2025-2026-antenna.jpeg"
+      }
+    },
+    {
+      "id": "works-sculptures-2025-2026-birdhouse",
+      "slug": "works-sculptures-2025-2026-birdhouse",
+      "title": "birdhouse",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 53,
+      "images": {
+        "slider": "/asset/slider/works-sculptures-2025-2026-birdhouse.jpeg",
+        "gallery": "/asset/gallery/works-sculptures-2025-2026-birdhouse.jpeg",
+        "index": "/asset/index/2026/53-works-sculptures-2025-2026-birdhouse.jpeg",
+        "detail": "/asset/detail/works-sculptures-2025-2026-birdhouse.jpeg"
+      }
+    },
+    {
+      "id": "works-sculptures-2025-2026-el-perro-y-el-castillo",
+      "slug": "works-sculptures-2025-2026-el-perro-y-el-castillo",
+      "title": "el perro y el castillo",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 54,
+      "images": {
+        "slider": "/asset/slider/works-sculptures-2025-2026-el-perro-y-el-castillo.jpeg",
+        "gallery": "/asset/gallery/works-sculptures-2025-2026-el-perro-y-el-castillo.jpeg",
+        "index": "/asset/index/2026/54-works-sculptures-2025-2026-el-perro-y-el-castillo.jpeg",
+        "detail": "/asset/detail/works-sculptures-2025-2026-el-perro-y-el-castillo.jpeg"
+      }
+    },
+    {
+      "id": "works-sculptures-2025-2026-hunter-cabin",
+      "slug": "works-sculptures-2025-2026-hunter-cabin",
+      "title": "hunter Cabin",
+      "dimensions": "",
+      "materials": "",
+      "year": 2026,
+      "date": "2026-01-01",
+      "description": null,
+      "order": 55,
+      "images": {
+        "slider": "/asset/slider/works-sculptures-2025-2026-hunter-cabin.jpeg",
+        "gallery": "/asset/gallery/works-sculptures-2025-2026-hunter-cabin.jpeg",
+        "index": "/asset/index/2026/55-works-sculptures-2025-2026-hunter-cabin.jpeg",
+        "detail": "/asset/detail/works-sculptures-2025-2026-hunter-cabin.jpeg"
+      }
+    },
+    {
+      "id": "works-papers-2025-maleteros-maleteros-parete",
+      "slug": "works-papers-2025-maleteros-maleteros-parete",
+      "title": "maleteros parete",
+      "dimensions": "",
+      "materials": "",
+      "year": 2025,
+      "date": "2025-01-01",
+      "description": null,
+      "order": 6,
+      "images": {
+        "slider": "/asset/slider/works-papers-2025-maleteros-maleteros-parete.jpeg",
+        "gallery": "/asset/gallery/works-papers-2025-maleteros-maleteros-parete.jpeg",
+        "index": "/asset/index/2025/06-works-papers-2025-maleteros-maleteros-parete.jpeg",
+        "detail": "/asset/detail/works-papers-2025-maleteros-maleteros-parete.jpeg"
+      }
+    },
+    {
+      "id": "works-papers-2025-maleteros-maleteros-1",
+      "slug": "works-papers-2025-maleteros-maleteros-1",
+      "title": "maleteros 1",
+      "dimensions": "",
+      "materials": "",
+      "year": 2025,
+      "date": "2025-01-01",
+      "description": null,
+      "order": 7,
+      "images": {
+        "slider": "/asset/slider/works-papers-2025-maleteros-maleteros-1.jpeg",
+        "gallery": "/asset/gallery/works-papers-2025-maleteros-maleteros-1.jpeg",
+        "index": "/asset/index/2025/07-works-papers-2025-maleteros-maleteros-1.jpeg",
+        "detail": "/asset/detail/works-papers-2025-maleteros-maleteros-1.jpeg"
+      }
+    },
+    {
+      "id": "works-papers-2025-maleteros-maleteros-2",
+      "slug": "works-papers-2025-maleteros-maleteros-2",
+      "title": "maleteros 2",
+      "dimensions": "",
+      "materials": "",
+      "year": 2025,
+      "date": "2025-01-01",
+      "description": null,
+      "order": 8,
+      "images": {
+        "slider": "/asset/slider/works-papers-2025-maleteros-maleteros-2.jpeg",
+        "gallery": "/asset/gallery/works-papers-2025-maleteros-maleteros-2.jpeg",
+        "index": "/asset/index/2025/08-works-papers-2025-maleteros-maleteros-2.jpeg",
+        "detail": "/asset/detail/works-papers-2025-maleteros-maleteros-2.jpeg"
+      }
+    },
+    {
+      "id": "works-papers-2025-maleteros-maleteros-3",
+      "slug": "works-papers-2025-maleteros-maleteros-3",
+      "title": "maleteros 3",
+      "dimensions": "",
+      "materials": "",
+      "year": 2025,
+      "date": "2025-01-01",
+      "description": null,
+      "order": 9,
+      "images": {
+        "slider": "/asset/slider/works-papers-2025-maleteros-maleteros-3.jpeg",
+        "gallery": "/asset/gallery/works-papers-2025-maleteros-maleteros-3.jpeg",
+        "index": "/asset/index/2025/09-works-papers-2025-maleteros-maleteros-3.jpeg",
+        "detail": "/asset/detail/works-papers-2025-maleteros-maleteros-3.jpeg"
+      }
+    },
+    {
+      "id": "works-papers-2025-maleteros-maleteros-4",
+      "slug": "works-papers-2025-maleteros-maleteros-4",
+      "title": "maleteros 4",
+      "dimensions": "",
+      "materials": "",
+      "year": 2025,
+      "date": "2025-01-01",
+      "description": null,
+      "order": 10,
+      "images": {
+        "slider": "/asset/slider/works-papers-2025-maleteros-maleteros-4.jpeg",
+        "gallery": "/asset/gallery/works-papers-2025-maleteros-maleteros-4.jpeg",
+        "index": "/asset/index/2025/10-works-papers-2025-maleteros-maleteros-4.jpeg",
+        "detail": "/asset/detail/works-papers-2025-maleteros-maleteros-4.jpeg"
+      }
+    },
+    {
+      "id": "works-papers-2025-maleteros-maleteros-5",
+      "slug": "works-papers-2025-maleteros-maleteros-5",
+      "title": "maleteros 5",
+      "dimensions": "",
+      "materials": "",
+      "year": 2025,
+      "date": "2025-01-01",
+      "description": null,
+      "order": 11,
+      "images": {
+        "slider": "/asset/slider/works-papers-2025-maleteros-maleteros-5.jpeg",
+        "gallery": "/asset/gallery/works-papers-2025-maleteros-maleteros-5.jpeg",
+        "index": "/asset/index/2025/11-works-papers-2025-maleteros-maleteros-5.jpeg",
+        "detail": "/asset/detail/works-papers-2025-maleteros-maleteros-5.jpeg"
+      }
+    },
+    {
+      "id": "works-papers-2025-maleteros-maleteros-6",
+      "slug": "works-papers-2025-maleteros-maleteros-6",
+      "title": "maleteros 6",
+      "dimensions": "",
+      "materials": "",
+      "year": 2025,
+      "date": "2025-01-01",
+      "description": null,
+      "order": 12,
+      "images": {
+        "slider": "/asset/slider/works-papers-2025-maleteros-maleteros-6.jpeg",
+        "gallery": "/asset/gallery/works-papers-2025-maleteros-maleteros-6.jpeg",
+        "index": "/asset/index/2025/12-works-papers-2025-maleteros-maleteros-6.jpeg",
+        "detail": "/asset/detail/works-papers-2025-maleteros-maleteros-6.jpeg"
+      }
+    },
+    {
+      "id": "works-papers-2025-maleteros-maleteros-7",
+      "slug": "works-papers-2025-maleteros-maleteros-7",
+      "title": "maleteros 7",
+      "dimensions": "",
+      "materials": "",
+      "year": 2025,
+      "date": "2025-01-01",
+      "description": null,
+      "order": 13,
+      "images": {
+        "slider": "/asset/slider/works-papers-2025-maleteros-maleteros-7.jpeg",
+        "gallery": "/asset/gallery/works-papers-2025-maleteros-maleteros-7.jpeg",
+        "index": "/asset/index/2025/13-works-papers-2025-maleteros-maleteros-7.jpeg",
+        "detail": "/asset/detail/works-papers-2025-maleteros-maleteros-7.jpeg"
+      }
+    },
+    {
+      "id": "works-papers-2025-maleteros-maleteros-8",
+      "slug": "works-papers-2025-maleteros-maleteros-8",
+      "title": "maleteros 8",
+      "dimensions": "",
+      "materials": "",
+      "year": 2025,
+      "date": "2025-01-01",
+      "description": null,
+      "order": 14,
+      "images": {
+        "slider": "/asset/slider/works-papers-2025-maleteros-maleteros-8.jpeg",
+        "gallery": "/asset/gallery/works-papers-2025-maleteros-maleteros-8.jpeg",
+        "index": "/asset/index/2025/14-works-papers-2025-maleteros-maleteros-8.jpeg",
+        "detail": "/asset/detail/works-papers-2025-maleteros-maleteros-8.jpeg"
+      }
+    },
+    {
+      "id": "works-papers-2025-maleteros-maleteros-9",
+      "slug": "works-papers-2025-maleteros-maleteros-9",
+      "title": "maleteros 9",
+      "dimensions": "",
+      "materials": "",
+      "year": 2025,
+      "date": "2025-01-01",
+      "description": null,
+      "order": 15,
+      "images": {
+        "slider": "/asset/slider/works-papers-2025-maleteros-maleteros-9.jpeg",
+        "gallery": "/asset/gallery/works-papers-2025-maleteros-maleteros-9.jpeg",
+        "index": "/asset/index/2025/15-works-papers-2025-maleteros-maleteros-9.jpeg",
+        "detail": "/asset/detail/works-papers-2025-maleteros-maleteros-9.jpeg"
+      }
+    }
+  ]
+}

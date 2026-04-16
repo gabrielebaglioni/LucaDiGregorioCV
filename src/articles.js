@@ -30,12 +30,10 @@ function seededShuffle(arr, rand) {
   return a;
 }
 
-const pool = (assets?.items ?? []).filter((i) => i?.image);
+const pool = (assets?.items ?? []).filter((item) => item?.images?.gallery);
 
 const seed = hashString(String(assets?.generatedAt ?? "assets"));
 const rand = mulberry32(seed);
-
-/** Gallery size 25–30, deterministic for a given assets.json */
 const galleryCount = 25 + (seed % 6);
 
 const shuffled = seededShuffle(pool, rand);
@@ -45,11 +43,11 @@ const articles = selected.map((item, idx) => ({
   id: `A${String(idx + 1).padStart(3, "0")}`,
   slug: item.slug || item.id,
   title: item.title,
-  bannerImg: item.image,
+  bannerImg: item.images.gallery,
   bodyCopy: [item.description ?? LOREM_PARA, LOREM_PARA, LOREM_PARA],
-  author: item.kind,
+  materials: item.materials || "—",
+  dimensions: item.dimensions || "—",
   date: item.date,
-  tags: [item.kind, String(item.year)],
 }));
 
 export default articles;

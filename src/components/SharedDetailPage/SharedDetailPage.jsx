@@ -121,22 +121,24 @@ export default function SharedDetailPage({
               <p>{authorLabel}</p>
             </div>
             <div className="revealer">
-              <p>By {author}</p>
+              <p>{author}</p>
             </div>
           </div>
 
-          <div className="article-tags">
-            <div className="revealer">
-              <p>{tagsLabel}</p>
+          {tags.length > 0 && (
+            <div className="article-tags">
+              <div className="revealer">
+                <p>{tagsLabel}</p>
+              </div>
+              <div className="tags">
+                {tags.map((tag, index) => (
+                  <div className="revealer" key={`${tag}-${index}`}>
+                    <p>{tag}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="tags">
-              {tags.map((tag, index) => (
-                <div className="revealer" key={`${tag}-${index}`}>
-                  <p>{tag}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          )}
 
           <div className="article-copy">
             <div className="revealer">
