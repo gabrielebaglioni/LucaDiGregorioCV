@@ -36,7 +36,7 @@ const HOME = {
   preloaderGifFadeDelay: 3,
   preloaderGifFadeDuration: 0.55,
   /** Restringimento fino alla forma minima (opacità ancora 1). */
-  preLoaderScaleEnd: 0.02,
+  preLoaderScaleEnd: 0.0001,
   preLoaderShrinkDuration: 2.2,
   /** Fade a opacità 0 solo dopo che la scala è al minimo. */
   preLoaderFadeDuration: 0.45,

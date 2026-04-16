@@ -132,9 +132,25 @@
 }
 
 @media (max-width: 900px) {
+  .home-page-content {
+    padding: 1.25rem;
+  }
+
   .home-hero {
-    top: 64%;
-    width: min(86vw, 520px);
-    aspect-ratio: 1.16 / 1;
+    top: 50%;
+    width: min(calc(100% - 10rem), 540px);
+    max-height: calc(100svh - 10rem);
+    aspect-ratio: 1.22 / 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-page-content {
+    padding: 1rem;
+  }
+
+  .home-hero {
+    width: 100%;
+    aspect-ratio: 1.08 / 1;
   }
 }

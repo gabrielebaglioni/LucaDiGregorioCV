@@ -303,8 +303,7 @@ const Page = () => {
           );
         })}
       </div>
-      <div className="p-50"></div>
-      <Footer />
+      
     </div>
   );
 };
