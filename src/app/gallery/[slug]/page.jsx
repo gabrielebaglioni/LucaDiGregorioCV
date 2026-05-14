@@ -2,12 +2,12 @@
 import { useParams } from "next/navigation";
 
 import articles from "@/articles";
-import { findArticleBySlug } from "@/utils";
+import { findGalleryArticleBySlug } from "@/data/gallery";
 import SharedDetailPage from "@/components/SharedDetailPage/SharedDetailPage";
 
 const ArticleDetail = () => {
   const { slug } = useParams();
-  const article = findArticleBySlug(articles, slug);
+  const article = findGalleryArticleBySlug(articles, slug);
 
   if (!article) {
     return (

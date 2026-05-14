@@ -94,28 +94,16 @@ const InfoPage = () => {
               ref={descriptionRef}
             >
               <p>
-                Format Archive is a thoughtfully curated marketplace for digital
-                design assets, tailored for creatives who value minimalism,
-                clarity, and intentionality. Our collection includes everything
-                from refined mockups and sleek UI templates to motion elements,
-                sound effects, and graphic components—each crafted to elevate
-                the way visual stories are told. Whether you're a designer
-                shaping a brand, a developer building an interface, or an artist
-                exploring new mediums, Format Archive offers tools that are as
-                functional as they are beautiful, designed to seamlessly
-                integrate into modern workflows and creative processes.
+                This site gathers selected works by Luca Di Gregorio—paintings,
+                objects, and projects presented with clarity so each piece can be
+                read on its terms. Browse the gallery for an overview of the body
+                of work, and open individual entries for materials, dimensions, and
+                context where available.
               </p>
               <p>
-                We believe great design is about more than aesthetics—it's about
-                purpose, utility, and the subtle details that create emotional
-                resonance. That's why we partner with independent designers and
-                studios across the globe who share our commitment to quality and
-                simplicity. Every asset we feature is carefully selected to
-                ensure it meets our standards for visual precision and
-                usability. At Format Archive, we aim to be more than just a
-                resource—we’re building a creative ecosystem where thoughtful
-                design lives, evolves, and empowers creators to do their best
-                work with confidence and clarity.
+                The practice is grounded in attentive making and restrained
+                presentation. Works are grouped and documented to support collectors,
+                curators, and collaborators who engage with them in person and online.
               </p>
             </div>
           </div>
@@ -129,16 +117,16 @@ const InfoPage = () => {
             </div>
             <div className="info-copy">
               <div className="revealer">
-                <p>Curated digital assets</p>
+                <p>Gallery &amp; archive views</p>
               </div>
               <div className="revealer">
-                <p>Ready to use</p>
+                <p>Detailed work sheets</p>
               </div>
               <div className="revealer">
-                <p>No subscriptions</p>
+                <p>Materials &amp; dimensions</p>
               </div>
               <div className="revealer">
-                <p>Pay once, own forever</p>
+                <p>Updated as new works join the studio</p>
               </div>
             </div>
           </div>
@@ -150,17 +138,10 @@ const InfoPage = () => {
             </div>
             <div className="info-copy">
               <div className="revealer">
-                <p>Creator Collaborations</p>
+                <p>Collaborations &amp; commissions</p>
               </div>
               <div className="revealer">
-                <p>studio@formatarchive.com</p>
-              </div>
-              <br />
-              <div className="revealer">
-                <p>Customer Support</p>
-              </div>
-              <div className="revealer">
-                <p>support@formatarchive.com</p>
+                <p>Please reach out through your usual channels with the studio</p>
               </div>
             </div>
           </div>

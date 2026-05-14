@@ -1,18 +1,11 @@
 "use client";
 import "./Footer.css";
 
-import Link from "next/link";
-
 const Footer = () => {
-  
-
   return (
     <div className="footer">
       <div className="footer-col">
-        <p>
-            Made by&nbsp;
-            <Link href="">Frank</Link>
-        </p>
+        <p>Made by Frank</p>
       </div>
     </div>
   );

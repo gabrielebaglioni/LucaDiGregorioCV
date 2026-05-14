@@ -3,6 +3,8 @@ import "./gallery.css";
 
 import articles from "@/articles";
 import Footer from "@/components/Footer/Footer";
+import ContainImage from "@/components/ui/ContainImage";
+import TwoLineMeta from "@/components/ui/TwoLineMeta";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -142,17 +144,19 @@ const Page = () => {
                       navigateTo(`/gallery/${article.slug}`)
                     }
                   >
-                    <div className="article-image">
-                      <img
-                        src={article.bannerImg}
-                        alt={article.title}
-                        className="article-img"
-                      />
-                    </div>
-                    <div className="article-info">
-                      <p className="article-title">{article.title}</p>
-                      <p className="article-author">{article.dimensions}</p>
-                    </div>
+                    <ContainImage
+                      wrapperClassName="article-image"
+                      imgClassName="article-img"
+                      src={article.bannerImg}
+                      alt={article.title}
+                    />
+                    <TwoLineMeta
+                      wrapperClassName="article-info"
+                      titleClassName="article-title"
+                      secondaryClassName="article-author"
+                      title={article.title}
+                      secondary={article.dimensions}
+                    />
                   </div>
                 )}
               </div>

@@ -6,7 +6,7 @@ import { ViewTransitions } from "next-view-transitions";
 
 export const metadata = {
   title: "Luca Di Gregorio",
-  description: "A curated marketplace for digital design assets.",
+  description: "Portfolio and selected works of Luca Di Gregorio.",
 };
 
 export default function RootLayout({ children }) {

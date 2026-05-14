@@ -2,9 +2,10 @@
 import "./index-page.css";
 import { useRef, useState } from "react";
 
-import { generateSlug } from "@/utils";
+import { generateSlug } from "@/data/slug";
 import products from "@/products";
-import Footer from "@/components/Footer/Footer";
+import ContainImage from "@/components/ui/ContainImage";
+import TwoLineMeta from "@/components/ui/TwoLineMeta";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -274,21 +275,19 @@ const Page = () => {
                                 }
                               >
                                 <div className="product-card">
-                                  <div className="product-card-image">
-                                    <img
-                                      src={product.previewImg}
-                                      alt={product.name}
-                                      className="product-card-img"
-                                    />
-                                  </div>
-                                  <div className="product-info">
-                                    <p className="product-card-name">
-                                      {product.name}
-                                    </p>
-                                    <p className="product-card-price">
-                                      {product.dimensions}
-                                    </p>
-                                  </div>
+                                  <ContainImage
+                                    wrapperClassName="product-card-image"
+                                    imgClassName="product-card-img"
+                                    src={product.previewImg}
+                                    alt={product.name}
+                                  />
+                                  <TwoLineMeta
+                                    wrapperClassName="product-info"
+                                    titleClassName="product-card-name"
+                                    secondaryClassName="product-card-price"
+                                    title={product.name}
+                                    secondary={product.dimensions}
+                                  />
                                 </div>
                               </div>
                             ))}
@@ -303,7 +302,6 @@ const Page = () => {
           );
         })}
       </div>
-      
     </div>
   );
 };

@@ -1,13 +1,13 @@
 "use client";
 import { useParams } from "next/navigation";
 
-import { findProductBySlug } from "@/utils";
+import { findIndexProductBySlug } from "@/data/index";
 import products from "@/products";
 import SharedDetailPage from "@/components/SharedDetailPage/SharedDetailPage";
 
 const ProductDetail = () => {
   const { slug } = useParams();
-  const product = findProductBySlug(products, slug);
+  const product = findIndexProductBySlug(products, slug);
 
   if (!product) {
     return (
